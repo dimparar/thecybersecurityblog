@@ -6,8 +6,18 @@
     <description>Recent content in Docs on The Cyber Security Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Dec 2024 19:32:27 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 23 Jul 2025 20:06:37 +0300</lastBuildDate>
     <atom:link href="https://dimparar.github.io/thecybersecurityblog/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DownUnder CTF 2025: Mutant</title>
+      <link>https://dimparar.github.io/thecybersecurityblog/docs/downunder2025_mutant/</link>
+      <pubDate>Wed, 23 Jul 2025 20:06:37 +0300</pubDate>
+      <guid>https://dimparar.github.io/thecybersecurityblog/docs/downunder2025_mutant/</guid>
+      <description>Github Repo with official writeups: DownUnderCTF 2025
+Description Just an XSS. What more is there to it?
+Category: web Difficulty: easy Author: ssparrow Open the web app through the browser. We can see this is like a XSS tester.
+According to the hint provided in the page, the flag is located at document.cookie. Even if we were able to find an XSS payload that executes alert(&#39;document.cookie&#39;) we would get our cookies, meaning that we would have an self-XSS.</description>
+    </item>
     <item>
       <title>Ntua Hack 3.0: Santas Lists</title>
       <link>https://dimparar.github.io/thecybersecurityblog/docs/ntuah4ck_santaslists/</link>
