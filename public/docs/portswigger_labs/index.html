@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/thecybersecurityblog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=thecybersecurityblog/livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>PortSwigger Labs | The Cyber Security Blog</title>
 <meta name="keywords" content="">
 <meta name="description" content="Introduction This blog contains a series of writeups for PortSwigger Labs challenges, solved with and without using Burp Suite | 2024.
@@ -13,16 +13,16 @@ Go to &ldquo;My account&rdquo; and log in with the given credentials Username: w
 Password: peter
 After logging in, we get redirected to &ldquo;My account&rdquo; page where there is an input box to upload our Avatar photo.">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/thecybersecurityblog/docs/portswigger_labs/">
-<link crossorigin="anonymous" href="/thecybersecurityblog/assets/css/stylesheet.e3e928c0e75da28e185e8ace8c46c76803e3a76b21208a628d547dfa21e5e86c.css" integrity="sha256-4&#43;kowOddoo4YXorOjEbHaAPjp2shIIpijVR9&#43;iHl6Gw=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/thecybersecurityblog/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/thecybersecurityblog/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/thecybersecurityblog/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/thecybersecurityblog/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/thecybersecurityblog/safari-pinned-tab.svg">
+<link rel="canonical" href="https://dimparar.github.io/thecybersecurityblog/docs/portswigger_labs/">
+<link crossorigin="anonymous" href="/thecybersecurityblog/assets/css/stylesheet.e1d5379b61d412d35dcaf2371eec6bea8c023e307a0719dcab030767036d17f6.css" integrity="sha256-4dU3m2HUEtNdyvI3Huxr6owCPjB6BxncqwMHZwNtF/Y=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://dimparar.github.io/thecybersecurityblog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://dimparar.github.io/thecybersecurityblog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://dimparar.github.io/thecybersecurityblog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://dimparar.github.io/thecybersecurityblog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://dimparar.github.io/thecybersecurityblog/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/thecybersecurityblog/docs/portswigger_labs/">
+<link rel="alternate" hreflang="en" href="https://dimparar.github.io/thecybersecurityblog/docs/portswigger_labs/">
 <noscript>
     <style>
         #theme-toggle,
@@ -59,7 +59,75 @@ After logging in, we get redirected to &ldquo;My account&rdquo; page where there
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:title" content="PortSwigger Labs" />
+<meta property="og:description" content="Introduction This blog contains a series of writeups for PortSwigger Labs challenges, solved with and without using Burp Suite | 2024.
+File upload vulnerabilities Lab: Web shell upload via Content-Type restriction bypass In this lab we have to exploit an upload vulnerability.
+Go to &ldquo;My account&rdquo; and log in with the given credentials Username: wiener
+Password: peter
+After logging in, we get redirected to &ldquo;My account&rdquo; page where there is an input box to upload our Avatar photo." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dimparar.github.io/thecybersecurityblog/docs/portswigger_labs/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2024-10-29T22:01:23+02:00" />
+<meta property="article:modified_time" content="2024-10-29T22:01:23+02:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PortSwigger Labs"/>
+<meta name="twitter:description" content="Introduction This blog contains a series of writeups for PortSwigger Labs challenges, solved with and without using Burp Suite | 2024.
+File upload vulnerabilities Lab: Web shell upload via Content-Type restriction bypass In this lab we have to exploit an upload vulnerability.
+Go to &ldquo;My account&rdquo; and log in with the given credentials Username: wiener
+Password: peter
+After logging in, we get redirected to &ldquo;My account&rdquo; page where there is an input box to upload our Avatar photo."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Docs",
+      "item": "https://dimparar.github.io/thecybersecurityblog/docs/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "PortSwigger Labs",
+      "item": "https://dimparar.github.io/thecybersecurityblog/docs/portswigger_labs/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "PortSwigger Labs",
+  "name": "PortSwigger Labs",
+  "description": "Introduction This blog contains a series of writeups for PortSwigger Labs challenges, solved with and without using Burp Suite | 2024.\nFile upload vulnerabilities Lab: Web shell upload via Content-Type restriction bypass In this lab we have to exploit an upload vulnerability.\nGo to \u0026ldquo;My account\u0026rdquo; and log in with the given credentials Username: wiener\nPassword: peter\nAfter logging in, we get redirected to \u0026ldquo;My account\u0026rdquo; page where there is an input box to upload our Avatar photo.",
+  "keywords": [
+    
+  ],
+  "articleBody": " Introduction This blog contains a series of writeups for PortSwigger Labs challenges, solved with and without using Burp Suite | 2024.\nFile upload vulnerabilities Lab: Web shell upload via Content-Type restriction bypass In this lab we have to exploit an upload vulnerability.\nGo to “My account” and log in with the given credentials Username: wiener\nPassword: peter\nAfter logging in, we get redirected to “My account” page where there is an input box to upload our Avatar photo. We want to check if there is any upload vulnerability we can exploit to get access to the server. For this cause we will use BurpSuite to analyze the POST request and response from the server.\nBy uploading a normal .jpeg file we are commanding a POST request: Notice the Content-Type: multipart/form-data;. This means that for each input of the form we have seperate Content-Disposision and Content-Type headers.\nIf we try any file, other than .jpeg and .png, an error message is returned as response. So the server checks somehow the file we upload and its extension to make sure that it is an image.\nThere is a possibility that the server in order to read the extension of the file provided, uses the Content-Type header. In this case we could easily bypass this validation by keeping the Content-Type: image/jpeg and changing the file data into a php webshell that can give us Remote Command Execution (RCE).\nLet’s give it a try! Send the POST request to the Repeater and insert the payload like this: Send the request. The avatar picture was changed successfully!\nNow let’s refresh the “My account” page and then press Ctrl+U to open the source code. Open the avatar photo in order to run the webshell.php. Then add to the URL ?cmd=cat+/home/carlos/secret.\nSubmit the code and voilla!\nLab: Web shell upload via path traversal Go to “My account” and log in with the given credentials Username: wiener\nPassword: peter\nAfter logging in, we get redirected to “My account” page where there is an input box to upload our Avatar photo. We want to check if there is any upload vulnerability we can exploit to get access to the server. For this cause we will use BurpSuite to analyze the POST request and response from the server.\nLet’s try to upload a webshell.php file (keep Content-Type: image/jpeg) in case the server uses it to identify the file extension. The response is Refresh the page and press Ctrl+U for the source code of the “My account” page. The path of the file we uploaded is If go to this path, we get our payload printed to the screen without being executed. So we need to find a workaround to execute this file. The server problably has permitted executing files from the specific folder /files/avatars as a defensive mechanism.\nIf we send request with filename=\"../webshell.php\", we get as response The file avatars/webshell.php has been uploaded.. Notice that the path hasn’t change regardless of ../, so it problably filters the path ignoring parts that could lead to a path traversal attack.\nThere are many payloads we can use, other than just typing ../. For example, let’s try URL encoding %2e%2e%2fwebshell.php (equal to ../webshell.php). As we can see now the response uploaded the file to /avatars/../webshell.php.\nBy opening the link we get a Not Found page. The URL is web-security-academy.net/files/avatars/..%2fwebshell.php, but if we remove ..%2f then we will go to the path that we uploaded the file web-security-academy.net/files/avatars/webshell.php. It loads. Now let’s see if the webshell works.\nweb-security-academy.net/files/avatars/webshell.php?cmd=cat+/home/carlos/secret\nSucess! We got the flag.\nPath traversal Lab: File path traversal, simple case Open the website along with BurpSuite Proxy to inspect the requests to the server. At the home page there are products for sale (Title, Image, Small Description).\nThe image is probably stored locally at the server, so we should check if it vulnerable at path traversal attacks.\nWhen we select a product we can see from BurpSuite Proxy the request GET /product?productId=1, with each product having each own ProductId. After this request there is another one, this time GET /image?filename=53.jpg for the image of the product.\nLet’s check if the second request is vulnerable to path traversal attacks. Change the request with BurpSuite Repeater to\nGET /image?filename=../../../etc/passwd Success! The response contains the data from /etc/passwd.\nLab: File path traversal, traversal sequences blocked with absolute path bypass Open the website along with BurpSuite Proxy to inspect the requests to the server. At the home page there are products for sale (Title, Image, Small Description).\nThe image is probably stored locally at the server, so we should check if it vulnerable at path traversal attacks.\nWhen we select a product we can see from BurpSuite Proxy the request GET /product?productId=1, with each product having each own ProductId. After this request there is another one, this time GET /image?filename=53.jpg for the image of the product.\nUsually all static content of a website is stored in a path like var/www/images at the server, so we want to exit this folder. If there is no validation or check then ../../../etc/passwd should work.\nUnfortunately, it’s not working. Maybe the server treats the path given to filename parameter as an absolute path, so let’s try giving /etc/passwd. Perfect, it just printed the /etc/passwd file contents in the reponse section of BurpSuite Repeater.\nNote: Try giving the absolute path of the file.\nLab: File path traversal, traversal sequences stripped non-recursively Same as before, open BurpSuite Proxy and send to Repeater the request GET /image?filename=53.jpg. This request is been commanded by the browser to load the image 53.jpg which is stored in the server. Let’s try some path traversal attacks.\n# First try to exit var/www/images ../../../etc/passwd #Nope # Now try Absolute Path /etc/passwd #No Luck # Server may have specific defences against path traversal attacks # like removing suspicious characters (../) ....//....//....//etc/passwd #Success Even though the server removes all ../ characters, the remaining path is exactly what we want ../../../etc/passwd.\nLab: File path traversal, traversal sequences stripped with superfluous URL-decode Same as before, open BurpSuite Proxy and send to Repeater the request GET /image?filename=53.jpg. This request is been commanded by the browser to load the image 53.jpg which is stored in the server. Let’s try some path traversal attacks.\n# First try to exit var/www/images ../../../etc/passwd #Nope # Now try Absolute Path /etc/passwd #Nope # Server may have specific defences against path traversal attacks # like removing suspicious characters (../) ....//....//....//etc/passwd #Nope # Use of URL Encoding # %2e = . # %2f = / %2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fpasswd #Nope # Double URL Encoding # %25 = % %252e%252e%252f%252e%252e%252f%252e%252e%252fetc%252Fpasswd #Success So in order to exploit this vulnearbility we need to encode our path traversal payload to Double URL Encoding.\nLab: File path traversal, validation of start of path Same as before, open BurpSuite Proxy and send to Repeater the request GET /image?filename=53.jpg. This request is been commanded by the browser to load the image 53.jpg which is stored in the server. Let’s try some path traversal attacks.\n# First try to exit var/www/images ../../../etc/passwd #Nope # Now try Absolute Path /etc/passwd #Nope # Server may have specific defences against path traversal attacks # like removing suspicious characters (../) ....//....//....//etc/passwd #Nope # Use of URL Encoding # %2e = . # %2f = / %2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fpasswd #Nope # Double URL Encoding # %25 = % %252e%252e%252f%252e%252e%252f%252e%252e%252fetc%252Fpasswd #Nothing # Server could take the absolute path and validate the base URL # For example here the absolute path is /var/www/images/53.jpg # and the base URL is /var/www/images /var/www/images/../../../etc/passwd #Success Lab: File path traversal, validation of file extension with null byte bypass Same as before, open BurpSuite Proxy and send to Repeater the request GET /image?filename=53.jpg. This request is been commanded by the browser to load the image 53.jpg which is stored in the server. Let’s try some path traversal attacks.\nThe methods from the other labs don’t apply here. Maybe the server checks the extention of the file, so let’s try to use NULL character to end the line before the .jpg to bypass the check. We need to use the URL encoded value %00.\n../../../etc.passwd%00.jpg CSRF Lab: CSRF vulnerability with no defenses Go to “My account” and log in with the given credentials Username: wiener\nPassword: peter\nNow we can see a section to change our email.\nIf we enter an email while having Burp Proxy running, we can see the POST request to /my-account/change-email HTTP/2 with body email=newemail%40normal.com.\nSo now we know that we need to construct an HTML that makes a POST request to /my-account/change-email HTTP/2 but has as body our email.\n\u003chtml\u003e \u003cbody\u003e \u003cform action=\"https://0a400076042ec1f4817e750d00c9009d.web-security-academy.net/my-account/change-email\" method=\"POST\"\u003e \u003cinput type=\"hidden\" name=\"email\" value=\"pwned@evil.com\" /\u003e \u003c/form\u003e \u003cscript\u003e document.forms[0].submit(); \u003c/script\u003e \u003c/body\u003e \u003c/html\u003e Now by using social engineering methods we can trick the user to run this HTML file. If the user loads this page and is already authorized to the website, then his email will be changed without him noticing.\nNote: The delivery mechanisms for cross-site request forgery attacks are essentially the same as for reflected XSS. Typically, the attacker will place the malicious HTML onto a website that they control, and then induce victims to visit that website. This might be done by feeding the user a link to the website, via an email or social media message. Or if the attack is placed into a popular website (for example, in a user comment), they might just wait for users to visit the website. For example we could send an email with an image tag, like img src=\"http://attacker-server/csrf-exploit.html\" width=\"0\" height=\"0\" border=\"0\" redirecting to the above html file hosted on our server.\nIn this case we got a server ready by PortSwigger, so we just need to enter our payload and press the “Deliver exploit to victim”.\nWe have sucessfully solved the lab!\nLab: CSRF where token validation depends on request method In this case when we change the email we see the POST request containing a CSRF-token to prevent us from forging a fake request.\nBut if we change the request from POST to GET we can see its working. The defences for CSRF where applied only at POST requests, leaving the website vulnerable.\nSo now we can construct the appropriate HTML file that will submit this request.\n\u003chtml\u003e \u003cbody\u003e \u003cform action=\"https://YOUR-LAB-ID.web-security-academy.net/my-account/change-email\"\u003e \u003cinput type=\"hidden\" name=\"email\" value=\"anything%40web-security-academy.net\"\u003e \u003c/form\u003e \u003cscript\u003e document.forms[0].submit(); \u003c/script\u003e \u003c/body\u003e \u003c/html\u003e Enter the payload to PortSwigger server and press “Deliver exploit to victim”.\nAuthentication Lab: Username enumeration via different responses Navigate to the login page, /login. Open Burp proxy and inspect the request/response when trying some random credentials.\nFor example, if we enter admin:admin then the request is the following.\nSo we have the parameters username and password. Let’s use the Burp Interuder to bruteforce them. Right click and “Sent to Intruder”\nIn this lab challenge, we will use the given wordlists from portswigger academy.\nFirst configure the positions of the parameters we want to fuzz and select as Attack type, Cluster Bomb in order to check each word of the username wordlist with each password in the password wordlist.\nHere we have 101 usernames and 100 passwords, that means 10100 combinations. That’s quite a lot.\nIf we start the attack we can see that the most responses have printed the message “Invalid username”. But after a couple of minutes one is different length and has printed “Invalid password”.\nSo we found the username and now we only need to find the password. Stop the attack and configure Burp Intruder only for the password, now we have only 100 requests to do, which is a ot faster.\nThe length of the response is different from the others, we might have something interesting here. Indeed this is password.\nLab: Username enumeration via subtly different responses Navigate to the login page, /login. Open Burp proxy and inspect the request/response when trying some random credentials. With test:test credentials we get the message Invalid username or password..\nLet’s send the request to intruder and try to enumerate the username in case the server responds with a different message.\nGo to “Settings” and then “Grep Match”, to add the message and check the following box, “Flag result items with responses matching these expressions:”\nNow we can start the attack. Notice there is a username with flag not equal to 1, meaning that Burp din not find the expression we provided.\nBy inspecting the response it seems that the message that is printed is Invalid username or password, without a fullstop. That’s propably a mistake and this is another message printed when the username is correct. Let’s check if we are right.\nBruteforce password with username adkit.\nWe got 302 (Found) status code, let’s try the credentials. Great we just solved the lab.\nLab: Username enumeration via response timing Navigate to the login page, /login. Open Burp proxy. We have given some credentials, wiener:peter, let’s check the response in case we provide the right password and in case we provide a very long one.\nIt seems that the server took very long time to process the second password. This means that we might be able to check the validity of the username/password based on the time needed to get the response back.\nIn order to enumerate the username first we need to set as password an arbitary long string.\nusername=§test§\u0026password=aaaaaaaaaaaaa...aaaaaaa But after running this attack with Burp Intruder we can see that there is no findings and that’s becuase if we inpect one of the most recent requests we get the message, You have made too many incorrect login attempts. Please try again in 30 minute(s).\nThe server propably blocks an IP address if it spams too many requests.\nBy adding the header X-Forwarded-For with a random IP we can bypass this validation.\nNote:\nThe X-Forwarded-For (XFF) request header is a de-facto standard header for identifying the originating IP address of a client connecting to a web server through a proxy server. When a client connects directly to a server, the client’s IP address is sent to the server (and is often written to server access logs). But if a client connection passes through any forward or reverse proxies, the server only sees the final proxy’s IP address, which is often of little use. That’s especially true if the final proxy is a load balancer which is part of the same installation as the server. So, to provide a more-useful client IP address to the server, the X-Forwarded-For request header is used.\nSo we need to fuzz also the IP address of the X-Forwarded-For header. We can use a online generator to generate random IP Addresses.\nThis takes significantly more time to receive the response which propably means that the username is correct and the server tries to process the long password.\nWe have successfully solved the lab challenge.\nLab: Broken brute-force protection, IP block We have our credentials, wiener:peter and the victim’s username, carlos.\nIf we try a few times to login with different password, we get the message, You have made too many incorrect login attempts. Please try again in 1 minute(s)..\nEven if we provide the X-Forwarded-For header with a different IP Address in each request, we get the same message.\nBy sending a couple of failed requests we can easily detect that three false requests are permitted before blocking the IP address for one minute.\nHowever, if we log in to our account a third time, the failed login attempts are reset. This allows us to fuzz both the username and password, but every three attempts, we must provide valid credentials. This process can be somewhat inconvenient using Burp’s basic functionality, which is why we can leverage the Turbo Intruder extension.\nTurbo Intruder allows us to write Python scripts to customize and optimize the fuzzing process.\nSend the request by right clicking and selecting the “Send to turbo intruder”\nThen configure the positions to fuzz by adding %s to the request.\ndef queueRequests(target, wordlists): engine = RequestEngine( endpoint=target.endpoint, concurrentConnections=1, requestsPerConnection=100, pipeline=False ) it = 0 for word2 in open('/home/kali/Desktop/htb/pass_burp.txt'): word2 = word2.strip() # Remove any trailing whitespace/newlines if it \u003c 2: engine.queue(target.req, [\"carlos\", word2]) it += 1 else: engine.queue(target.req, [\"wiener\", 'peter']) it = 0 # Reset the counter after every 3rd iteration def handleResponse(req, interesting): if interesting: table.add(req) Notice that concurrentConnections=1 is set to ensure each request is sent sequentially, waiting for a response before proceeding to the next. Using multiple connections increases the likelihood of requests being processed out of order, which could lead to the server blocking the IP address.\nThe attack was successful, the password is love.\nLab: Username enumeration via account lock We know that the there will be some kind of blocking after some failed attempts. Let’s check this by sending the /login request to Turbo Intruder.\nWe want to fuzz the username with the wordlist and make at least 5 attepts so we can find if any username is triggering the account lock.\ndef queueRequests(target, wordlists): engine = RequestEngine( endpoint=target.endpoint, concurrentConnections=5, requestsPerConnection=100, pipeline=False ) it = 0 for word1 in open('/home/kali/Desktop/htb/usernames_burp.txt'): for i in range(0, 5): engine.queue(target.req, [word1.strip(), \"test\"]) def handleResponse(req, interesting): if interesting: table.add(req) If we filter by length we can see two responses with different length from the others, the username is oracle.\nLet’s see if we can fuzz the password with this username. Send the request of /login to Burp Intruder and configure it with a Sniper Type. Then provide the password wordlist.\nAs expected, most of the responses have printed the message You have made too many incorrect login attempts. Please try again in 1 minute(s)., but there is one, with password ashley that doesn’t print any message. This is our password.\nLab: 2FA simple bypass We have available the victim’s credentials, carlos:montoya so let’s try them. When we enter the credentials at login page then we get redirected to page login2. Let’s go to home page by modifying the url.\nIt seems that we are logged in now, by going to my account page we are in carlos account. We bypassed the 2-Factor-Authentication cause it was not properly implemented. We were already in logged-in state when going to login2 page so we were able to completely bypass it.\nCross-site Scripting (XSS) Lab: Reflected XSS into HTML context with nothing encoded Navigate to the website and check every input point. The most classic functionality we should check first is the search box.\nInsert something like abc'\"\u003e\u003c\u003e#;//-- in order to check if the server encodes some of the special characters.\nWe can also use Burp Proxy to intercept the request and send it to Repeater to analyze it along with its response. Before our payload we sould insert a string, like abc, as it would be much easier searching for it and subsequently finding the injection point (the context). Now that we can see that our checking payload is reflected to the website without any encoding or protection, let’s construct the real deal.\n\u003cscript\u003ealert(document.domain)\u003c/script\u003e // Context is inside h1 tag // Alternatives abc'\"\u003e\u003c\u003e\u003cimg src=1 onerror=alert(document.domain)\u003e We found the XSS vulnerability!\nLab: Stored XSS into HTML context with nothing encoded Navigate to the website and to the /post page. We can see that there is a comment section. When we write a comment and all the information that are nessesary we intercept the request.\nWe have a POST request to /post/comment with these parameters.\nIf our comment is not sanitized we could enter a payload to to the comment parameter to achieve Stored-XSS. Let’s give it a try.\nGreat now everytime someone loads this page and consequently loads the comment section with or malicious payload, will get a javascript message with the domain. This could be used by a malicious actor to steal cookies sessions and more.\nLab: DOM XSS in document.write sink using source location.search For this lab we will use a Burp Browser plugin, the DOM Invader. In this case it might be easy to detect the context of the injection in the javascript file, but in a more complicated website with minified js files it will be challenging and time consuming to do it manually.\nFirst make sure DOM Invader and Postmessage Interception is on.\nThen copy the canary and navigate to the website. Search all entry points by pasting the canary.\nFirst let’s examine the search functionality. After searching a random string we can see a new parameter to the url, /?search=test.\nNow paste the canary to this parameter or the search bar and open Developer Tools with F12. We can see a new tab with the DOM Invader plugin.\nThere is new message to DOM tab. If we click at the stack trace and go to the console tab we can see exactly the canary hit in the code.\nSo now we know that our payload is injected here. In order for our payload work we need to close first the img tag.\nWe could also use something like abc'\"\u003e\u003c\u003e, which is essentailly the same thing but it is a payload that could work in many cases.\nLab: DOM XSS in document.write sink using source location.search inside a select element Enable DOM Invader and navigate to the website. If we click to a product we can see that we are redirecting to something like /product?productId=1.\nMaybe the parameter productId is vulnerable to DOM XSS. Paste the canary, /product?productId=. Before even using DOM Invader we get an error page that this is not a valid productId. Let’s move on to the next entry point.\nIn each product page there is a check availability option.\nChoose a random location from the given ones and click “Check stock”. We can see that we get redirected again to /product page. There is propably another request happening here so let’s use Burp Proxy to intercept it and find out.\nWe have a POST request to /product/store with parameters productId and storeId. Let’s check the last one for DOM XSS.\nWe got a hit at DOM tab.\nThe injection is here: If we close the two tags, option and select, maybe we can inject an alert() payload.\n\u003c/option\u003e\u003c/select\u003e\u003cimg src=1 onerror=alert()\u003e Great we solved the lab!\nLab: DOM XSS in innerHTML sink using source location.search Navigate to the website and test the search functionality, by pasting the canary to the search parameter.\nFrom DOM Invader we get that the injection is inside innerHtml attribute, which means that we tags like ",
+  "wordCount" : "4371",
+  "inLanguage": "en",
+  "datePublished": "2024-10-29T22:01:23+02:00",
+  "dateModified": "2024-10-29T22:01:23+02:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dimparar.github.io/thecybersecurityblog/docs/portswigger_labs/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Cyber Security Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dimparar.github.io/thecybersecurityblog/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -83,13 +151,13 @@ After logging in, we get redirected to &ldquo;My account&rdquo; page where there
     <nav class="nav">
         <div class="head-class">
             <div class="logo">
-                <a href="http://localhost:1313/thecybersecurityblog/" accesskey="h" title="The Cyber Security Blog (Alt + H)">The Cyber Security Blog</a>
+                <a href="https://dimparar.github.io/thecybersecurityblog/" accesskey="h" title="The Cyber Security Blog (Alt + H)">The Cyber Security Blog</a>
                 
             </div>
             <ul id="menu">
                 
                 <li>
-                    <a href="http://localhost:1313/thecybersecurityblog/" title="Home">
+                    <a href="https://dimparar.github.io/thecybersecurityblog/" title="Home">
                         <span>Home</span>
                     </a>
                 </li>
@@ -97,7 +165,7 @@ After logging in, we get redirected to &ldquo;My account&rdquo; page where there
                     <li>|</li>
                 
                 <li>
-                    <a href="http://localhost:1313/thecybersecurityblog/blog/" title="Blog">
+                    <a href="https://dimparar.github.io/thecybersecurityblog/blog/" title="Blog">
                         <span>Blog</span>
                     </a>
                 </li>
@@ -105,7 +173,7 @@ After logging in, we get redirected to &ldquo;My account&rdquo; page where there
                     <li>|</li>
                 
                 <li>
-                    <a href="http://localhost:1313/thecybersecurityblog/tags/" title="Tags">
+                    <a href="https://dimparar.github.io/thecybersecurityblog/tags/" title="Tags">
                         <span>Tags</span>
                     </a>
                 </li>
@@ -113,7 +181,7 @@ After logging in, we get redirected to &ldquo;My account&rdquo; page where there
                     <li>|</li>
                 
                 <li>
-                    <a href="http://localhost:1313/thecybersecurityblog/about/" title="About">
+                    <a href="https://dimparar.github.io/thecybersecurityblog/about/" title="About">
                         <span>About</span>
                     </a>
                 </li>
@@ -660,7 +728,7 @@ Essentially <code>this.responseText</code> is the JSON attribute <code>searchTer
     </main>
     
 <footer class="footer">
-    <span>&copy; 2025 <a href="http://localhost:1313/thecybersecurityblog/">The Cyber Security Blog</a></span>
+    <span>&copy; 2025 <a href="https://dimparar.github.io/thecybersecurityblog/">The Cyber Security Blog</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

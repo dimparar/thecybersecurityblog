@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head>
-	<meta name="generator" content="Hugo 0.123.7"><meta charset="utf-8">
+<head><script src="/thecybersecurityblog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=thecybersecurityblog/livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>The Cyber Security Blog</title>
-
-<meta name="description" content="">
+<meta name="robots" content="noindex, nofollow">
+<title>Hack The Box: Linkvortex | The Cyber Security Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content="Git is a content-addressable filesystem. That means that each file we add to our repository is been addressed as a SHA-1 hash. This unique hash is what we will use later to retreive these files.
+Each hash is under the .git/objects folder.
+.git/objects ├── 50 │ └── 864e0261278525197724b394ed4292414d9fec │ ├── e6 │ └── 54b0ed7f9c9aedf3180ee1fd94e7e43b29f000 │ └── pack ├── pack-0b802d170fe45db10157bb8e02bfc9397d5e9d87.idx └── pack-0b802d170fe45db10157bb8e02bfc9397d5e9d87.pack Here we have two objects with hashes 50864e0261278525197724b394ed4292414d9fec and e654b0ed7f9c9aedf3180ee1fd94e7e43b29f000.">
 <meta name="author" content="">
-<link rel="canonical" href="https://dimparar.github.io/thecybersecurityblog/">
+<link rel="canonical" href="http://localhost:1313/thecybersecurityblog/docs/htb_linkvortex/">
 <link crossorigin="anonymous" href="/thecybersecurityblog/assets/css/stylesheet.e1d5379b61d412d35dcaf2371eec6bea8c023e307a0719dcab030767036d17f6.css" integrity="sha256-4dU3m2HUEtNdyvI3Huxr6owCPjB6BxncqwMHZwNtF/Y=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://dimparar.github.io/thecybersecurityblog/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://dimparar.github.io/thecybersecurityblog/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://dimparar.github.io/thecybersecurityblog/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://dimparar.github.io/thecybersecurityblog/apple-touch-icon.png">
-<link rel="mask-icon" href="https://dimparar.github.io/thecybersecurityblog/safari-pinned-tab.svg">
+<link rel="icon" href="http://localhost:1313/thecybersecurityblog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/thecybersecurityblog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/thecybersecurityblog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/thecybersecurityblog/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/thecybersecurityblog/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://dimparar.github.io/thecybersecurityblog/index.xml">
-<link rel="alternate" hreflang="en" href="https://dimparar.github.io/thecybersecurityblog/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/thecybersecurityblog/docs/htb_linkvortex/">
 <noscript>
     <style>
         #theme-toggle,
@@ -57,31 +57,10 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="The Cyber Security Blog" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://dimparar.github.io/thecybersecurityblog/" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="The Cyber Security Blog"/>
-<meta name="twitter:description" content=""/>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "The Cyber Security Blog",
-  "url": "https://dimparar.github.io/thecybersecurityblog/",
-  "description": "",
-  "thumbnailUrl": "https://dimparar.github.io/thecybersecurityblog/favicon.ico",
-  "sameAs": [
-      
-  ]
-}
-</script>
+</noscript>
 </head>
 
-<body class="list" id="top">
+<body class="" id="top">
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
         document.body.classList.add('dark');
@@ -102,21 +81,21 @@
     <nav class="nav">
         <div class="head-class">
             <div class="logo">
-                <a href="https://dimparar.github.io/thecybersecurityblog/" accesskey="h" title="The Cyber Security Blog (Alt + H)">The Cyber Security Blog</a>
+                <a href="http://localhost:1313/thecybersecurityblog/" accesskey="h" title="The Cyber Security Blog (Alt + H)">The Cyber Security Blog</a>
                 
             </div>
             <ul id="menu">
                 
                 <li>
-                    <a href="https://dimparar.github.io/thecybersecurityblog/" title="Home">
-                        <span class="active">Home</span>
+                    <a href="http://localhost:1313/thecybersecurityblog/" title="Home">
+                        <span>Home</span>
                     </a>
                 </li>
                 
                     <li>|</li>
                 
                 <li>
-                    <a href="https://dimparar.github.io/thecybersecurityblog/blog/" title="Blog">
+                    <a href="http://localhost:1313/thecybersecurityblog/blog/" title="Blog">
                         <span>Blog</span>
                     </a>
                 </li>
@@ -124,7 +103,7 @@
                     <li>|</li>
                 
                 <li>
-                    <a href="https://dimparar.github.io/thecybersecurityblog/tags/" title="Tags">
+                    <a href="http://localhost:1313/thecybersecurityblog/tags/" title="Tags">
                         <span>Tags</span>
                     </a>
                 </li>
@@ -132,7 +111,7 @@
                     <li>|</li>
                 
                 <li>
-                    <a href="https://dimparar.github.io/thecybersecurityblog/about/" title="About">
+                    <a href="http://localhost:1313/thecybersecurityblog/about/" title="About">
                         <span>About</span>
                     </a>
                 </li>
@@ -143,125 +122,48 @@
 </header>
 <main class="main">
 
-<style>
-    @import url(https://fonts.googleapis.com/css?family=Lato);
-    @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+<article class="post-single">
+  
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Hack The Box: Linkvortex
+    </h1>
+    <div class="post-meta"><span title='2025-02-04 10:55:18 +0200 EET'>04 Feb 2025</span>
 
-    * {
-        letter-spacing:0em;
-    }
+</div>
+  </header> 
+  <div class="post-content"><p>Git is a content-addressable filesystem. That means that each file we add to our repository is been addressed as a SHA-1 hash. This unique hash is what we will use later to retreive these files.</p>
+<p>Each hash is under the <code>.git/objects</code> folder.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>.git/objects
+</span></span><span style="display:flex;"><span>├── <span style="color:#ae81ff">50</span>
+</span></span><span style="display:flex;"><span>│   └── 864e0261278525197724b394ed4292414d9fec
+</span></span><span style="display:flex;"><span>│
+</span></span><span style="display:flex;"><span>├── e6
+</span></span><span style="display:flex;"><span>│   └── 54b0ed7f9c9aedf3180ee1fd94e7e43b29f000
+</span></span><span style="display:flex;"><span>│
+</span></span><span style="display:flex;"><span>└── pack
+</span></span><span style="display:flex;"><span>    ├── pack-0b802d170fe45db10157bb8e02bfc9397d5e9d87.idx
+</span></span><span style="display:flex;"><span>    └── pack-0b802d170fe45db10157bb8e02bfc9397d5e9d87.pack
+</span></span></code></pre></div><p>Here we have two objects with hashes <code>50864e0261278525197724b394ed4292414d9fec</code> and <code>e654b0ed7f9c9aedf3180ee1fd94e7e43b29f000</code>.</p>
+<p>Git stores different types of objects in <code>.git/objects</code>. An object stored here could either be a commit, a tree, a blob, and an annotated tag.
+We can use the command <code>git cat-file -t &lt;Object-Hash&gt;</code> to determine the type of the object.</p>
+<p><img loading="lazy" src="1.png" alt="alt"  />
+</p>
+<p>Both objects are Blob(Binary Large Object), so we have probably found a source code file. To read the contents use the command <code>git cat-file -p &lt;Object-Hash&gt;</code>.</p>
 
-    .summary {
-        font-size: 0.8em;
-        font-weight: 400;
-        line-height:2.5em;
-    }
 
-    .main-section {
-        display: flex;
-        flex-direction: column;
-         
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-    }
+  </div>
 
-    .content {
-        min-width:40em;
-         
-        margin: auto;
-    }
-
-    .small-titles {
-        font-size: 1.1em;
-        font-weight: 500;
-
-        
-    }
-
-    .titles {
-        font-size: 1.4em;
-        font-weight: 400;
-    }
-
-    .entry {
-        font-size: 0.9em;
-        font-weight: 300;
-        font-style: italic;
-        letter-spacing:0em;
-        padding-top: 8px;
-        text-align: left;
-        width: auto;
-    }
-
-    .fa-linkedin-square {
-        padding:1px 2.8px;
-        -o-transition:.3s;
-        -ms-transition:.3s;
-        -moz-transition:.3s;
-        -webkit-transition:.3s;
-        transition: .3s;
-        color: white;
-    }
-
-    .fa-linkedin-square:hover {
-        color: rgb(8, 140, 228);
-    }
-
-    .fa-github {
-        padding:1px 2.8px;
-        -o-transition:.3s;
-        -ms-transition:.3s;
-        -moz-transition:.3s;
-        -webkit-transition:.3s;
-        transition: .3s;
-        color: white;
-    }
-
-    .fa-github:hover {
-        color: rgb(8, 140, 228);
-    }
-
-</style>
-
-<section class="main-section">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <div class="content">
-        <div class="summary"> This is my Blog.<br> Here I will track my progress in reverse engineering and CTFs.<br>
-        Find me on 
-        <a href="https://www.linkedin.com/in/dimitris-pararas-626349200"><i class="fa fa-linkedin-square" style="font-size:16px"></i></a> and <a href="https://github.com/dimparar"><i class="fa fa-github" style="font-size:18px"></i></a>.
-        </div>
-        <br><br><br>
-        <span class="titles">Posts</span><br><br><br>
-        <span class="small-titles">Topics</span><br><br><br>
-        <span class="small-titles">Most recent</span><br><br>
-
-        
-        <div>
-            
-                <div class="entry">
-                    2024-03-13 
-                    <a href="https://dimparar.github.io/thecybersecurityblog/docs/bank_ctf/">Bank CTF</a>
-                </div>
-            
-        </div>
-        
-        <div>
-            
-        </div>
-        
-        <div>
-            
-        </div>
-        
-    </div>
-</section>
-
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2025 <a href="https://dimparar.github.io/thecybersecurityblog/">The Cyber Security Blog</a></span>
+    <span>&copy; 2025 <a href="http://localhost:1313/thecybersecurityblog/">The Cyber Security Blog</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

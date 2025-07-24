@@ -2,17 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Docs on The Cyber Security Blog</title>
-    <link>http://localhost:1313/thecybersecurityblog/docs/</link>
+    <link>https://dimparar.github.io/thecybersecurityblog/docs/</link>
     <description>Recent content in Docs on The Cyber Security Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Dec 2024 19:32:27 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/thecybersecurityblog/docs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Jul 2025 20:06:37 +0300</lastBuildDate>
+    <atom:link href="https://dimparar.github.io/thecybersecurityblog/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DownUnder CTF 2025: Mutant</title>
+      <link>https://dimparar.github.io/thecybersecurityblog/docs/downunder2025_mutant/</link>
+      <pubDate>Wed, 23 Jul 2025 20:06:37 +0300</pubDate>
+      <guid>https://dimparar.github.io/thecybersecurityblog/docs/downunder2025_mutant/</guid>
+      <description>Github Repo with official writeups: DownUnderCTF 2025
+Description Just an XSS. What more is there to it?
+Category: web Difficulty: easy Author: ssparrow Open the web app through the browser. We can see this is like a XSS tester.
+According to the hint provided in the page, the flag is located at document.cookie. Even if we were able to find an XSS payload that executes alert(&#39;document.cookie&#39;) we would get our cookies, meaning that we would have an self-XSS.</description>
+    </item>
     <item>
       <title>Ntua Hack 3.0: Santas Lists</title>
-      <link>http://localhost:1313/thecybersecurityblog/docs/ntuah4ck_santaslists/</link>
+      <link>https://dimparar.github.io/thecybersecurityblog/docs/ntuah4ck_santaslists/</link>
       <pubDate>Mon, 16 Dec 2024 19:32:27 +0200</pubDate>
-      <guid>http://localhost:1313/thecybersecurityblog/docs/ntuah4ck_santaslists/</guid>
+      <guid>https://dimparar.github.io/thecybersecurityblog/docs/ntuah4ck_santaslists/</guid>
       <description>Github Repo with official writeups: NTUAH4CK-3.0 by Thread-in-the-Needle
 Description Can you manage to read Santa&amp;rsquo;s secret list? 🎅🎅🎅
 Tags: web
@@ -23,9 +33,9 @@ Let&amp;rsquo;s inspect the server code that is provided along with the challeng
     </item>
     <item>
       <title>Ntua Hack 3.0: Lazy Admin</title>
-      <link>http://localhost:1313/thecybersecurityblog/docs/ntuah4ck_lazyadmin/</link>
+      <link>https://dimparar.github.io/thecybersecurityblog/docs/ntuah4ck_lazyadmin/</link>
       <pubDate>Mon, 16 Dec 2024 18:41:26 +0200</pubDate>
-      <guid>http://localhost:1313/thecybersecurityblog/docs/ntuah4ck_lazyadmin/</guid>
+      <guid>https://dimparar.github.io/thecybersecurityblog/docs/ntuah4ck_lazyadmin/</guid>
       <description>Github Repo with official writeups: NTUAH4CK-3.0 by Thread-in-the-Needle
 Description Admin doesn&amp;rsquo;t take security seriously when reviewing user messages. Can you exploit this? Flag format: NH4CK{a-g}
 Tags: web
@@ -34,26 +44,26 @@ When we send a dummy reguest we get a Request Successful message. We can&amp;rsq
     </item>
     <item>
       <title>Hack The Box: GreenHorn</title>
-      <link>http://localhost:1313/thecybersecurityblog/docs/htb_greenhorn/</link>
+      <link>https://dimparar.github.io/thecybersecurityblog/docs/htb_greenhorn/</link>
       <pubDate>Thu, 21 Nov 2024 18:17:06 +0200</pubDate>
-      <guid>http://localhost:1313/thecybersecurityblog/docs/htb_greenhorn/</guid>
+      <guid>https://dimparar.github.io/thecybersecurityblog/docs/htb_greenhorn/</guid>
       <description>Let&amp;rsquo;s scan with nmap.
 PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8.9p1 Ubuntu 3ubuntu0.10 (Ubuntu Linux; protocol 2.0) 80/tcp open http nginx 1.18.0 (Ubuntu) 3000/tcp open ppp? Modify the /etc/hosts file by adding 10.10.11.25 greenhorn.htb so the browser can skip the DNS resoltion. Now we can access the domain.
 As we can see, there is an http service running at port 80 and an undefined service running at port 3000.</description>
     </item>
     <item>
       <title>Hack The Box: Instant</title>
-      <link>http://localhost:1313/thecybersecurityblog/docs/htb_instant/</link>
+      <link>https://dimparar.github.io/thecybersecurityblog/docs/htb_instant/</link>
       <pubDate>Sun, 17 Nov 2024 19:49:44 +0200</pubDate>
-      <guid>http://localhost:1313/thecybersecurityblog/docs/htb_instant/</guid>
+      <guid>https://dimparar.github.io/thecybersecurityblog/docs/htb_instant/</guid>
       <description>Let&amp;rsquo;s scan the machine with nmap.
 PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 9.6p1 Ubuntu 3ubuntu13.5 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 256 31:83:eb:9f:15:f8:40:a5:04:9c:cb:3f:f6:ec:49:76 (ECDSA) |_ 256 6f:66:03:47:0e:8a:e0:03:97:67:5b:41:cf:e2:c7:c7 (ED25519) 80/tcp open http Apache httpd 2.4.58 | http-methods: |_ Supported Methods: GET HEAD POST OPTIONS |_http-server-header: Apache/2.4.58 (Ubuntu) |_http-title: Did not follow redirect to http://instant.htb/ Service Info: Host: instant.htb; OS: Linux; CPE: cpe:/o:linux:linux_kernel We have an Http Server running at port 80.</description>
     </item>
     <item>
       <title>Bug Bounty Useful Resources</title>
-      <link>http://localhost:1313/thecybersecurityblog/docs/bug_bounty_useful_resources/</link>
+      <link>https://dimparar.github.io/thecybersecurityblog/docs/bug_bounty_useful_resources/</link>
       <pubDate>Sat, 09 Nov 2024 22:00:07 +0200</pubDate>
-      <guid>http://localhost:1313/thecybersecurityblog/docs/bug_bounty_useful_resources/</guid>
+      <guid>https://dimparar.github.io/thecybersecurityblog/docs/bug_bounty_useful_resources/</guid>
       <description>Practical Examples Uber Bug Bounty: Turning Self-XSS into Good-XSS by fin1te
 Uber XSS via Cookie by zhchbin
 Using XAMPP and Burp Intruder when scanning for subdomains to look for interesting behaviour &amp;amp; code
@@ -65,26 +75,26 @@ How 100% Manual Hacking (Without Even Kali And Burp) Led To 2 Medium Vulnerabili
     </item>
     <item>
       <title>Hack The Box: PermX</title>
-      <link>http://localhost:1313/thecybersecurityblog/docs/htb_permx/</link>
+      <link>https://dimparar.github.io/thecybersecurityblog/docs/htb_permx/</link>
       <pubDate>Fri, 08 Nov 2024 13:43:52 +0200</pubDate>
-      <guid>http://localhost:1313/thecybersecurityblog/docs/htb_permx/</guid>
+      <guid>https://dimparar.github.io/thecybersecurityblog/docs/htb_permx/</guid>
       <description>Let&amp;rsquo;s scan the machine with nmap.
 # Command sudo nmap -sS -sV -sC -v -T4 10.10.11.23 # Output PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8.9p1 Ubuntu 3ubuntu0.10 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 256 e2:5c:5d:8c:47:3e:d8:72:f7:b4:80:03:49:86:6d:ef (ECDSA) |_ 256 1f:41:02:8e:6b:17:18:9c:a0:ac:54:23:e9:71:30:17 (ED25519) 80/tcp open http Apache httpd 2.4.52 Let&amp;rsquo;s check the Http Server in browser. It seems then we try to access http://10.10.11.23:80/ we get redirected to http://permx.htb/, but the page doesn&amp;rsquo;t load.</description>
     </item>
     <item>
       <title>Hack The Box: Cap</title>
-      <link>http://localhost:1313/thecybersecurityblog/docs/htb_cap/</link>
+      <link>https://dimparar.github.io/thecybersecurityblog/docs/htb_cap/</link>
       <pubDate>Fri, 01 Nov 2024 22:59:51 +0200</pubDate>
-      <guid>http://localhost:1313/thecybersecurityblog/docs/htb_cap/</guid>
+      <guid>https://dimparar.github.io/thecybersecurityblog/docs/htb_cap/</guid>
       <description>Let ip_address=10.10.10.10.
 Scan the machine with nmap.
 sudo nmap -sS -sV -sC -T4 -v -Pn 10.10.10.10Host discovery disabled (-Pn). All addresses will be marked &amp;#39;up&amp;#39; and scan times may be slower.Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-11-01 14:55 EDTNSE: Loaded 156 scripts for scanning.NSE: Script Pre-scanning.Initiating NSE at 14:55Completed NSE at 14:55, 0.00s elapsedInitiating NSE at 14:55Completed NSE at 14:55, 0.00s elapsedInitiating NSE at 14:55Completed NSE at 14:55, 0.</description>
     </item>
     <item>
       <title>PortSwigger Labs</title>
-      <link>http://localhost:1313/thecybersecurityblog/docs/portswigger_labs/</link>
+      <link>https://dimparar.github.io/thecybersecurityblog/docs/portswigger_labs/</link>
       <pubDate>Tue, 29 Oct 2024 22:01:23 +0200</pubDate>
-      <guid>http://localhost:1313/thecybersecurityblog/docs/portswigger_labs/</guid>
+      <guid>https://dimparar.github.io/thecybersecurityblog/docs/portswigger_labs/</guid>
       <description>Introduction This blog contains a series of writeups for PortSwigger Labs challenges, solved with and without using Burp Suite | 2024.
 File upload vulnerabilities Lab: Web shell upload via Content-Type restriction bypass In this lab we have to exploit an upload vulnerability.
 Go to &amp;ldquo;My account&amp;rdquo; and log in with the given credentials Username: wiener
@@ -93,16 +103,16 @@ After logging in, we get redirected to &amp;ldquo;My account&amp;rdquo; page whe
     </item>
     <item>
       <title>Crackmes.one Challenges</title>
-      <link>http://localhost:1313/thecybersecurityblog/docs/crackmes-challenges/</link>
+      <link>https://dimparar.github.io/thecybersecurityblog/docs/crackmes-challenges/</link>
       <pubDate>Wed, 13 Mar 2024 22:10:50 +0200</pubDate>
-      <guid>http://localhost:1313/thecybersecurityblog/docs/crackmes-challenges/</guid>
+      <guid>https://dimparar.github.io/thecybersecurityblog/docs/crackmes-challenges/</guid>
       <description>ChallengeDifficultyQualityLinksporta778&#39;s Bobby2.05.0here</description>
     </item>
     <item>
       <title>Bank CTF</title>
-      <link>http://localhost:1313/thecybersecurityblog/docs/bank_ctf/</link>
+      <link>https://dimparar.github.io/thecybersecurityblog/docs/bank_ctf/</link>
       <pubDate>Wed, 13 Mar 2024 01:23:32 +0200</pubDate>
-      <guid>http://localhost:1313/thecybersecurityblog/docs/bank_ctf/</guid>
+      <guid>https://dimparar.github.io/thecybersecurityblog/docs/bank_ctf/</guid>
       <description>Link:TryHackMe | Bank CTF
 service apache2 start -&amp;gt; start apache2 server
 service apache2 stop -&amp;gt; stop apache2 server
