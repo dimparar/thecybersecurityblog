@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/thecybersecurityblog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=thecybersecurityblog/livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>Hack The Box: Instant | The Cyber Security Blog</title>
 <meta name="keywords" content="">
 <meta name="description" content="Let&rsquo;s scan the machine with nmap.
 PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 9.6p1 Ubuntu 3ubuntu13.5 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 256 31:83:eb:9f:15:f8:40:a5:04:9c:cb:3f:f6:ec:49:76 (ECDSA) |_ 256 6f:66:03:47:0e:8a:e0:03:97:67:5b:41:cf:e2:c7:c7 (ED25519) 80/tcp open http Apache httpd 2.4.58 | http-methods: |_ Supported Methods: GET HEAD POST OPTIONS |_http-server-header: Apache/2.4.58 (Ubuntu) |_http-title: Did not follow redirect to http://instant.htb/ Service Info: Host: instant.htb; OS: Linux; CPE: cpe:/o:linux:linux_kernel We have an Http Server running at port 80.">
 <meta name="author" content="">
-<link rel="canonical" href="https://dimparar.github.io/thecybersecurityblog/docs/htb_instant/">
+<link rel="canonical" href="http://localhost:1313/thecybersecurityblog/docs/htb_instant/">
 <link crossorigin="anonymous" href="/thecybersecurityblog/assets/css/stylesheet.e1d5379b61d412d35dcaf2371eec6bea8c023e307a0719dcab030767036d17f6.css" integrity="sha256-4dU3m2HUEtNdyvI3Huxr6owCPjB6BxncqwMHZwNtF/Y=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://dimparar.github.io/thecybersecurityblog/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://dimparar.github.io/thecybersecurityblog/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://dimparar.github.io/thecybersecurityblog/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://dimparar.github.io/thecybersecurityblog/apple-touch-icon.png">
-<link rel="mask-icon" href="https://dimparar.github.io/thecybersecurityblog/safari-pinned-tab.svg">
+<link rel="icon" href="http://localhost:1313/thecybersecurityblog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/thecybersecurityblog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/thecybersecurityblog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/thecybersecurityblog/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/thecybersecurityblog/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://dimparar.github.io/thecybersecurityblog/docs/htb_instant/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/thecybersecurityblog/docs/htb_instant/">
 <noscript>
     <style>
         #theme-toggle,
@@ -56,69 +56,7 @@ PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 9.6p1 Ubuntu 3ubuntu13.5 (Ubu
         }
 
     </style>
-</noscript><meta property="og:title" content="Hack The Box: Instant" />
-<meta property="og:description" content="Let&rsquo;s scan the machine with nmap.
-PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 9.6p1 Ubuntu 3ubuntu13.5 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 256 31:83:eb:9f:15:f8:40:a5:04:9c:cb:3f:f6:ec:49:76 (ECDSA) |_ 256 6f:66:03:47:0e:8a:e0:03:97:67:5b:41:cf:e2:c7:c7 (ED25519) 80/tcp open http Apache httpd 2.4.58 | http-methods: |_ Supported Methods: GET HEAD POST OPTIONS |_http-server-header: Apache/2.4.58 (Ubuntu) |_http-title: Did not follow redirect to http://instant.htb/ Service Info: Host: instant.htb; OS: Linux; CPE: cpe:/o:linux:linux_kernel We have an Http Server running at port 80." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://dimparar.github.io/thecybersecurityblog/docs/htb_instant/" /><meta property="article:section" content="docs" />
-<meta property="article:published_time" content="2024-11-17T19:49:44+02:00" />
-<meta property="article:modified_time" content="2024-11-17T19:49:44+02:00" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Hack The Box: Instant"/>
-<meta name="twitter:description" content="Let&rsquo;s scan the machine with nmap.
-PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 9.6p1 Ubuntu 3ubuntu13.5 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 256 31:83:eb:9f:15:f8:40:a5:04:9c:cb:3f:f6:ec:49:76 (ECDSA) |_ 256 6f:66:03:47:0e:8a:e0:03:97:67:5b:41:cf:e2:c7:c7 (ED25519) 80/tcp open http Apache httpd 2.4.58 | http-methods: |_ Supported Methods: GET HEAD POST OPTIONS |_http-server-header: Apache/2.4.58 (Ubuntu) |_http-title: Did not follow redirect to http://instant.htb/ Service Info: Host: instant.htb; OS: Linux; CPE: cpe:/o:linux:linux_kernel We have an Http Server running at port 80."/>
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Docs",
-      "item": "https://dimparar.github.io/thecybersecurityblog/docs/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Hack The Box: Instant",
-      "item": "https://dimparar.github.io/thecybersecurityblog/docs/htb_instant/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Hack The Box: Instant",
-  "name": "Hack The Box: Instant",
-  "description": "Let\u0026rsquo;s scan the machine with nmap.\nPORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 9.6p1 Ubuntu 3ubuntu13.5 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 256 31:83:eb:9f:15:f8:40:a5:04:9c:cb:3f:f6:ec:49:76 (ECDSA) |_ 256 6f:66:03:47:0e:8a:e0:03:97:67:5b:41:cf:e2:c7:c7 (ED25519) 80/tcp open http Apache httpd 2.4.58 | http-methods: |_ Supported Methods: GET HEAD POST OPTIONS |_http-server-header: Apache/2.4.58 (Ubuntu) |_http-title: Did not follow redirect to http://instant.htb/ Service Info: Host: instant.htb; OS: Linux; CPE: cpe:/o:linux:linux_kernel We have an Http Server running at port 80.",
-  "keywords": [
-    
-  ],
-  "articleBody": "Let’s scan the machine with nmap.\nPORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 9.6p1 Ubuntu 3ubuntu13.5 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 256 31:83:eb:9f:15:f8:40:a5:04:9c:cb:3f:f6:ec:49:76 (ECDSA) |_ 256 6f:66:03:47:0e:8a:e0:03:97:67:5b:41:cf:e2:c7:c7 (ED25519) 80/tcp open http Apache httpd 2.4.58 | http-methods: |_ Supported Methods: GET HEAD POST OPTIONS |_http-server-header: Apache/2.4.58 (Ubuntu) |_http-title: Did not follow redirect to http://instant.htb/ Service Info: Host: instant.htb; OS: Linux; CPE: cpe:/o:linux:linux_kernel We have an Http Server running at port 80. In order to get access, we need to modify the /etc/hosts file, or use a tool like Burpsuite to change the Host header of the request to Host: instant.htb\n# access the endpoint from the browser sudo echo \"10.10.11.37 instant.htb\" \u003e\u003e /etc/hosts The website is promoting an android application that offers customers cross-platform transactions.\nWe searched the website for any interesting endpoint that could be vulnerable to SQL injection or XSS vulnerability, but unfortunately there is nothing notable.\n# Also used directory bruteforcing just to be sure gobuster dir -u http://instant.htb/ -w /usr/share/worldlist/dirb/big.txt # Then proceed with subdomain bruteforcing ffuf -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -u http://instant.htb/ -H \"Host: FUZZ.instant.htb\" Nothing… so let’s download and examine the application by requesting http://instant.htb/downloads/instant.apk or by simply clicking the “Download Now” button.\nFirst, we can use the apkurlgrep tool (Github Repo) to extract endpoints from the apk.\napkurlgrep -a instant.apk \u003e\u003e apkUrls.txt So we found a subdomain, mywalletv1.instant.htb that has some api endpoints for authentication and user activities.\nModify the /etc/hosts file accordingly and now let’s try to access these endpoints while proxying the traffic with Burpsuite.\nWe get a 201 response with ‘Unauthorized’ message. We don’t know a lot about the api yet, so we should see if we can find out more by the application.\nLet’s use a decompiler, like jadx to inspect the code. In order to launch the GUI version, navigate to the bin directory and execute jadx-gui. Now open the instant.apk file.\nRight off the bat we can see at AdminActivities class, a private function TestAdminAuthorization that constructs a new http request to /api/v1/view/profile and adds a header, Authorization: We may be able to use this token to authenticate as Admin.\nGreat! We are authorized to view the profile of admin.\nEven though we got some useful information, something is missing. Continue with enumeration of inspect.apk.\nWe can unzip an Android .apk, exactly like a .zip file, but in this case to examine in more detail we will use apktool.\napktool d instant.apk -o instant-app One thing we can check right away, is the res/xml/network_security_config.xml file, which is used to specify security details like certificate pins and HTTP traffic settings. An example is allowing HTTP traffic for specific domains. (HackTricks - Basic understanding of the application)\ncat instant-app/res/xml/network_security_config.xml # results \u003c?xml version=\"1.0\" encoding=\"utf-8\"?\u003e ",
-  "wordCount" : "906",
-  "inLanguage": "en",
-  "datePublished": "2024-11-17T19:49:44+02:00",
-  "dateModified": "2024-11-17T19:49:44+02:00",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://dimparar.github.io/thecybersecurityblog/docs/htb_instant/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "The Cyber Security Blog",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://dimparar.github.io/thecybersecurityblog/favicon.ico"
-    }
-  }
-}
-</script>
+</noscript>
 </head>
 
 <body class="" id="top">
@@ -142,13 +80,13 @@ PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 9.6p1 Ubuntu 3ubuntu13.5 (Ubu
     <nav class="nav">
         <div class="head-class">
             <div class="logo">
-                <a href="https://dimparar.github.io/thecybersecurityblog/" accesskey="h" title="The Cyber Security Blog (Alt + H)">The Cyber Security Blog</a>
+                <a href="http://localhost:1313/thecybersecurityblog/" accesskey="h" title="The Cyber Security Blog (Alt + H)">The Cyber Security Blog</a>
                 
             </div>
             <ul id="menu">
                 
                 <li>
-                    <a href="https://dimparar.github.io/thecybersecurityblog/" title="Home">
+                    <a href="http://localhost:1313/thecybersecurityblog/" title="Home">
                         <span>Home</span>
                     </a>
                 </li>
@@ -156,7 +94,7 @@ PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 9.6p1 Ubuntu 3ubuntu13.5 (Ubu
                     <li>|</li>
                 
                 <li>
-                    <a href="https://dimparar.github.io/thecybersecurityblog/blog/" title="Blog">
+                    <a href="http://localhost:1313/thecybersecurityblog/blog/" title="Blog">
                         <span>Blog</span>
                     </a>
                 </li>
@@ -164,7 +102,7 @@ PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 9.6p1 Ubuntu 3ubuntu13.5 (Ubu
                     <li>|</li>
                 
                 <li>
-                    <a href="https://dimparar.github.io/thecybersecurityblog/tags/" title="Tags">
+                    <a href="http://localhost:1313/thecybersecurityblog/tags/" title="Tags">
                         <span>Tags</span>
                     </a>
                 </li>
@@ -172,7 +110,7 @@ PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 9.6p1 Ubuntu 3ubuntu13.5 (Ubu
                     <li>|</li>
                 
                 <li>
-                    <a href="https://dimparar.github.io/thecybersecurityblog/about/" title="About">
+                    <a href="http://localhost:1313/thecybersecurityblog/about/" title="About">
                         <span>About</span>
                     </a>
                 </li>
@@ -347,7 +285,7 @@ In order to get access, we need to modify the <code>/etc/hosts</code> file, or u
     </main>
     
 <footer class="footer">
-    <span>&copy; 2025 <a href="https://dimparar.github.io/thecybersecurityblog/">The Cyber Security Blog</a></span>
+    <span>&copy; 2026 <a href="http://localhost:1313/thecybersecurityblog/">The Cyber Security Blog</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
