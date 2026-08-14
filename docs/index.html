@@ -151,6 +151,37 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">CTF@AC 2025: Money
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Description This isn’t wordpress…
+Provided Code:
+from flask import Flask, request, jsonify, send_from_directory, redirect, url_for import os, uuid, zipfile, subprocess, json, time, html from Crypto.Cipher import AES from Crypto.Util.Padding import unpad app = Flask(__name__) BASE_DIR = &#34;/opt/app&#34; PLUGINS_DIR = os.path.join(BASE_DIR, &#34;plugins&#34;) REGISTRY_PATH = os.path.join(BASE_DIR, &#34;plugins.json&#34;) LOG_PATH = os.path.join(BASE_DIR, &#34;app.log&#34;) STORE_DIR = os.path.join(BASE_DIR, &#34;store&#34;) os.makedirs(PLUGINS_DIR, exist_ok=True) os.makedirs(STORE_DIR, exist_ok=True) FLAG_ID = &#34;&#34; if not os.path.exists(REGISTRY_PATH): with open(REGISTRY_PATH, &#34;w&#34;) as f: json.dump([], f) def log(msg): ts = time....</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-09-16 00:15:37 +0300 +0300'>16 Sep 2025</span></footer>
+  <a class="entry-link" aria-label="post link to CTF@AC 2025: Money" href="https://dimparar.github.io/thecybersecurityblog/docs/ctf@ac2025_money/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">07CTF 2025: Cryptic Mistake
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Description I made a cryptic hunt platform, but seems like I messed up big time.
+https://v0-firebase-ctf-challenge.vercel.app/
+Category: web Difficulty: easy Author: bhavya_32 This is a firebase app, which means we could check for misconfigurations.
+Sign in with a google account and get the Bearer Token ID.
+Firebase uses firestore REST API. If misconfigured we may be able to read information with no priveleges. To access firestore we use
+https://firestore.googleapis.com/v1/projects/{project_id}/databases/(default)/documents/{collection} project_id is found at GET /__/firebase/init....</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-09-14 21:36:17 +0300 +0300'>14 Sep 2025</span></footer>
+  <a class="entry-link" aria-label="post link to 07CTF 2025: Cryptic Mistake" href="https://dimparar.github.io/thecybersecurityblog/docs/07ctf_cryptic_mistake/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">DownUnder CTF 2025: Mutant
     </h2>
   </header>
@@ -270,34 +301,6 @@ sudo nmap -sS -sV -sC -T4 -v -Pn 10.10.10.10Host discovery disabled (-Pn). All 
   <footer class="entry-footer"><span title='2024-11-01 22:59:51 +0200 +0200'>01 Nov 2024</span></footer>
   <a class="entry-link" aria-label="post link to Hack The Box: Cap" href="https://dimparar.github.io/thecybersecurityblog/docs/htb_cap/"></a>
 </article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">PortSwigger Labs
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Introduction This blog contains a series of writeups for PortSwigger Labs challenges, solved with and without using Burp Suite | 2024.
-File upload vulnerabilities Lab: Web shell upload via Content-Type restriction bypass In this lab we have to exploit an upload vulnerability.
-Go to “My account” and log in with the given credentials Username: wiener
-Password: peter
-After logging in, we get redirected to “My account” page where there is an input box to upload our Avatar photo....</p>
-  </div>
-  <footer class="entry-footer"><span title='2024-10-29 22:01:23 +0200 +0200'>29 Oct 2024</span></footer>
-  <a class="entry-link" aria-label="post link to PortSwigger Labs" href="https://dimparar.github.io/thecybersecurityblog/docs/portswigger_labs/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Crackmes.one Challenges
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>ChallengeDifficultyQualityLinksporta778&#39;s Bobby2.05.0here</p>
-  </div>
-  <footer class="entry-footer"><span title='2024-03-13 22:10:50 +0200 +0200'>13 Mar 2024</span></footer>
-  <a class="entry-link" aria-label="post link to Crackmes.one Challenges" href="https://dimparar.github.io/thecybersecurityblog/docs/crackmes-challenges/"></a>
-</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="next" href="https://dimparar.github.io/thecybersecurityblog/docs/page/2/">Next&nbsp;&nbsp;»
@@ -307,7 +310,7 @@ After logging in, we get redirected to “My account” page where there is an i
     </main>
     
 <footer class="footer">
-    <span>&copy; 2025 <a href="https://dimparar.github.io/thecybersecurityblog/">The Cyber Security Blog</a></span>
+    <span>&copy; 2026 <a href="https://dimparar.github.io/thecybersecurityblog/">The Cyber Security Blog</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

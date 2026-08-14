@@ -6,8 +6,29 @@
     <description>Recent content in Docs on The Cyber Security Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Jul 2025 20:06:37 +0300</lastBuildDate>
+    <lastBuildDate>Tue, 16 Sep 2025 00:15:37 +0300</lastBuildDate>
     <atom:link href="https://dimparar.github.io/thecybersecurityblog/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CTF@AC 2025: Money</title>
+      <link>https://dimparar.github.io/thecybersecurityblog/docs/ctf@ac2025_money/</link>
+      <pubDate>Tue, 16 Sep 2025 00:15:37 +0300</pubDate>
+      <guid>https://dimparar.github.io/thecybersecurityblog/docs/ctf@ac2025_money/</guid>
+      <description>Description This isn&amp;rsquo;t wordpress&amp;hellip;
+Provided Code:
+from flask import Flask, request, jsonify, send_from_directory, redirect, url_for import os, uuid, zipfile, subprocess, json, time, html from Crypto.Cipher import AES from Crypto.Util.Padding import unpad app = Flask(__name__) BASE_DIR = &amp;#34;/opt/app&amp;#34; PLUGINS_DIR = os.path.join(BASE_DIR, &amp;#34;plugins&amp;#34;) REGISTRY_PATH = os.path.join(BASE_DIR, &amp;#34;plugins.json&amp;#34;) LOG_PATH = os.path.join(BASE_DIR, &amp;#34;app.log&amp;#34;) STORE_DIR = os.path.join(BASE_DIR, &amp;#34;store&amp;#34;) os.makedirs(PLUGINS_DIR, exist_ok=True) os.makedirs(STORE_DIR, exist_ok=True) FLAG_ID = &amp;#34;&amp;#34; if not os.path.exists(REGISTRY_PATH): with open(REGISTRY_PATH, &amp;#34;w&amp;#34;) as f: json.dump([], f) def log(msg): ts = time.</description>
+    </item>
+    <item>
+      <title>07CTF 2025: Cryptic Mistake</title>
+      <link>https://dimparar.github.io/thecybersecurityblog/docs/07ctf_cryptic_mistake/</link>
+      <pubDate>Sun, 14 Sep 2025 21:36:17 +0300</pubDate>
+      <guid>https://dimparar.github.io/thecybersecurityblog/docs/07ctf_cryptic_mistake/</guid>
+      <description>Description I made a cryptic hunt platform, but seems like I messed up big time.
+https://v0-firebase-ctf-challenge.vercel.app/
+Category: web Difficulty: easy Author: bhavya_32 This is a firebase app, which means we could check for misconfigurations.
+Sign in with a google account and get the Bearer Token ID.
+Firebase uses firestore REST API. If misconfigured we may be able to read information with no priveleges. To access firestore we use
+https://firestore.googleapis.com/v1/projects/{project_id}/databases/(default)/documents/{collection} project_id is found at GET /__/firebase/init.</description>
+    </item>
     <item>
       <title>DownUnder CTF 2025: Mutant</title>
       <link>https://dimparar.github.io/thecybersecurityblog/docs/downunder2025_mutant/</link>
