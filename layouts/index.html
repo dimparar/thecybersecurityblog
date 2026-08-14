@@ -94,7 +94,7 @@
         <span class="small-titles">Topics</span><br><br><br>
         <span class="small-titles">Most recent</span><br><br>
 
-        {{ range .Paginator.Pages }}
+        {{ range site.RegularPages }}
         <div>
             {{ if .Params.showpage }}
                 <div class="entry">
