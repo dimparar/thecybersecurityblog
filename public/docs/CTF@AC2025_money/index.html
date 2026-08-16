@@ -12,7 +12,7 @@ Provided Code:
 from flask import Flask, request, jsonify, send_from_directory, redirect, url_for import os, uuid, zipfile, subprocess, json, time, html from Crypto.Cipher import AES from Crypto.Util.Padding import unpad app = Flask(__name__) BASE_DIR = &#34;/opt/app&#34; PLUGINS_DIR = os.path.join(BASE_DIR, &#34;plugins&#34;) REGISTRY_PATH = os.path.join(BASE_DIR, &#34;plugins.json&#34;) LOG_PATH = os.path.join(BASE_DIR, &#34;app.log&#34;) STORE_DIR = os.path.join(BASE_DIR, &#34;store&#34;) os.makedirs(PLUGINS_DIR, exist_ok=True) os.makedirs(STORE_DIR, exist_ok=True) FLAG_ID = &#34;&#34; if not os.path.exists(REGISTRY_PATH): with open(REGISTRY_PATH, &#34;w&#34;) as f: json.dump([], f) def log(msg): ts = time.">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/thecybersecurityblog/docs/ctf@ac2025_money/">
-<link crossorigin="anonymous" href="/thecybersecurityblog/assets/css/stylesheet.ffc56e0d6c975a96895798832f58ab6489a31f8a0c5d5886505d7fca8673585f.css" integrity="sha256-/8VuDWyXWpaJV5iDL1irZImjH4oMXViGUF1/yoZzWF8=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/thecybersecurityblog/assets/css/stylesheet.03dbb6dfefbf332e346f913b271526740afd981d3cb8c2f3da04ccd107eebbeb.css" integrity="sha256-A9u23&#43;&#43;/My40b5E7JxUmdAr9mB08uMLz2gTM0Qfuu&#43;s=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/thecybersecurityblog/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/thecybersecurityblog/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/thecybersecurityblog/favicon-32x32.png">

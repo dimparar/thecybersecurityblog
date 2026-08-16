@@ -34,12 +34,12 @@
         transition: .15s ease-in , border-color cubic-bezier(0.165, 0.84, 0.44, 1);
         
         &:hover, &:focus-within {
-            box-shadow: 0 0 0 4px #16C79A, 0 10px 60px 0 rgba(#000, .1);
+            box-shadow: 0 0 0 4px var(--accent), 0 10px 60px 0 rgba(#000, .1);
                 transform: translatey(-5px);
         }
         
         &:hover {
-            border-color: #16C79A;
+            border-color: var(--accent);
         }
         
     }
@@ -173,13 +173,13 @@
     .post-content h1 {
         margin: 40px auto 32px;
         font-size: 26px;
-        color: #77B0AA;
+        color: var(--accent);
     }
 
     .post-content h2 {
         margin: 32px auto 24px;
         font-size: 26px;
-        color: #77B0AA;
+        color: var(--accent);
     }
 
     .post-content h3 {
@@ -543,7 +543,7 @@
    hacker-minimal table of contents (sticky left rail)
    ========================================================= */
 .toc-terminal {
-    --toc-accent: #23e0a4;
+    --toc-accent: var(--accent);
     position: relative;
     max-width: 46em;
     margin: 24px auto var(--content-gap) auto;
