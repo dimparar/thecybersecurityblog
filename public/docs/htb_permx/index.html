@@ -11,7 +11,7 @@
 # Command sudo nmap -sS -sV -sC -v -T4 10.10.11.23 # Output PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8.9p1 Ubuntu 3ubuntu0.10 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 256 e2:5c:5d:8c:47:3e:d8:72:f7:b4:80:03:49:86:6d:ef (ECDSA) |_ 256 1f:41:02:8e:6b:17:18:9c:a0:ac:54:23:e9:71:30:17 (ED25519) 80/tcp open http Apache httpd 2.4.52 Let&rsquo;s check the Http Server in browser. It seems then we try to access http://10.10.11.23:80/ we get redirected to http://permx.htb/, but the page doesn&rsquo;t load.">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/thecybersecurityblog/docs/htb_permx/">
-<link crossorigin="anonymous" href="/thecybersecurityblog/assets/css/stylesheet.8e90554d91a1d3cb24421bb48022426f0c7a642696e63bead57b787e9db2e5bf.css" integrity="sha256-jpBVTZGh08skQhu0gCJCbwx6ZCaW5jvq1Xt4fp2y5b8=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/thecybersecurityblog/assets/css/stylesheet.ffc56e0d6c975a96895798832f58ab6489a31f8a0c5d5886505d7fca8673585f.css" integrity="sha256-/8VuDWyXWpaJV5iDL1irZImjH4oMXViGUF1/yoZzWF8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/thecybersecurityblog/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/thecybersecurityblog/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/thecybersecurityblog/favicon-32x32.png">
@@ -132,23 +132,27 @@
 
 </div>
   </header>
-  <div class="card-list" onclick="location.href='https:\/\/www.hackthebox.com\/achievement\/machine\/2124852\/613';" style="cursor: pointer;">
-    <article class="card">
-      <figure class="card-image">
-        <img class=card-image src="permx_cert.png" alt="Cert" />
-      </figure>
-      <div class="card-header">
-        <a href="https://www.hackthebox.com/achievement/machine/2124852/613">Owned PermX from Hack The Box</a>
-      </div>
-      <div class="card-content">
-        I have just gained ownership of PermX machine from Hack The Box
-      </div>
-      <div class="card-footer">
-        Hack The Box
-      </div>
-    </article>
-  </div> 
-  <div class="post-content"><p>Let&rsquo;s scan the machine with nmap.</p>
+  
+  <div class="post-body">
+
+    <div class="post-main">
+      <div class="card-list" onclick="location.href='https:\/\/www.hackthebox.com\/achievement\/machine\/2124852\/613';" style="cursor: pointer;">
+        <article class="card">
+          <figure class="card-image">
+            <img class=card-image src="permx_cert.png" alt="Cert" />
+          </figure>
+          <div class="card-header">
+            <a href="https://www.hackthebox.com/achievement/machine/2124852/613">Owned PermX from Hack The Box</a>
+          </div>
+          <div class="card-content">
+            I have just gained ownership of PermX machine from Hack The Box
+          </div>
+          <div class="card-footer">
+            Hack The Box
+          </div>
+        </article>
+      </div> 
+      <div class="post-content"><p>Let&rsquo;s scan the machine with nmap.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Command</span>
 </span></span><span style="display:flex;"><span>sudo nmap -sS -sV -sC -v -T4 10.10.11.23
 </span></span><span style="display:flex;"><span>
@@ -263,6 +267,8 @@
 <p>We have gained successfully root previleges and the flag!</p>
 
 
+      </div>
+    </div>
   </div>
 
   <footer class="post-footer">

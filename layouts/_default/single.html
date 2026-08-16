@@ -30,65 +30,100 @@
     {{- end }}
   </header>
   
-  {{- if .Params.tableOfContents}}
-  <div class="toc-terminal" aria-label="Table of Contents">
-    <div class="toc-terminal-bar" data-text="root@thecybersecurityblog:~$ cat table-of-contents.txt">
-      <span class="toc-terminal-light is-red"></span>
-      <span class="toc-terminal-light is-yellow"></span>
-      <span class="toc-terminal-light is-green"></span>
-      <span class="toc-terminal-title">root@thecybersecurityblog:~$ cat table-of-contents.txt</span>
-    </div>
-    <div class="toc-terminal-body">
-      <div class="toc-terminal-command"><span class="toc-terminal-prompt">$</span> <span class="toc-terminal-cmd">grep -i "sections" index.md</span></div>
+  <div class="post-body{{ if .Params.tableOfContents }} with-toc{{ end }}">
+    {{- if .Params.tableOfContents}}
+    <div class="toc-terminal" aria-label="Table of Contents">
+      <div class="toc-terminal-heading">Table of Contents</div>
       {{ .TableOfContents }}
-      <div class="toc-terminal-command"><span class="toc-terminal-prompt">$</span><span class="toc-terminal-cursor"></span></div>
+      <script>
+        (function () {
+          function init() {
+            var nav = document.querySelector(".toc-terminal #TableOfContents");
+            if (!nav) return;
+            var items = nav.querySelectorAll("li");
+            var links = Array.prototype.slice.call(nav.querySelectorAll("a"));
+            var headings = links.map(function (a) {
+              var id = a.getAttribute("href");
+              if (!id || id.charAt(0) !== "#") return null;
+              return document.getElementById(id.slice(1));
+            }).filter(Boolean);
+            if (!headings.length) return;
+
+            function setActive(id) {
+              Array.prototype.forEach.call(items, function (li) {
+                var a = li.querySelector("a");
+                var active = a && a.getAttribute("href") === "#" + id;
+                li.classList.toggle("is-active", active);
+              });
+            }
+
+            function onScroll() {
+              var offset = 60;
+              var currentId = null;
+              if ((window.innerHeight + window.pageYOffset) >= document.documentElement.scrollHeight - 4) {
+                currentId = headings[headings.length - 1].id;
+              } else {
+                for (var i = 0; i < headings.length; i++) {
+                  if (headings[i].getBoundingClientRect().top <= offset) {
+                    currentId = headings[i].id;
+                  } else {
+                    break;
+                  }
+                }
+              }
+              setActive(currentId);
+            }
+
+            window.addEventListener("scroll", onScroll, { passive: true });
+            window.addEventListener("resize", onScroll);
+            onScroll();
+          }
+
+          if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", init);
+          } else {
+            init();
+          }
+        })();
+      </script>
     </div>
-    <script>
-      (function () {
-        var nav = document.querySelector(".toc-terminal #TableOfContents");
-        if (!nav) return;
-        var items = nav.querySelectorAll("li");
-        Array.prototype.forEach.call(items, function (li, i) {
-          li.style.setProperty("--ti", i);
-        });
-      })();
-    </script>
-  </div>
-  {{- end }}
-  
-  {{- if .Params.ctfcard}}
-  <div class="card-list" onclick="location.href='{{.Params.cert_path}}';" style="cursor: pointer;">
-    <article class="card">
-      <figure class="card-image">
-        <img class=card-image src="{{.Params.photoname}}" alt="Cert" />
-      </figure>
-      <div class="card-header">
-        <a href="{{.Params.cert_path}}">Owned {{.Params.ctf_name}} from Hack The Box</a>
+    {{- end }}
+
+    <div class="post-main">
+      {{- if .Params.ctfcard}}
+      <div class="card-list" onclick="location.href='{{.Params.cert_path}}';" style="cursor: pointer;">
+        <article class="card">
+          <figure class="card-image">
+            <img class=card-image src="{{.Params.photoname}}" alt="Cert" />
+          </figure>
+          <div class="card-header">
+            <a href="{{.Params.cert_path}}">Owned {{.Params.ctf_name}} from Hack The Box</a>
+          </div>
+          <div class="card-content">
+            I have just gained ownership of {{.Params.ctf_name}} machine from Hack The Box
+          </div>
+          <div class="card-footer">
+            Hack The Box
+          </div>
+        </article>
       </div>
-      <div class="card-content">
-        I have just gained ownership of {{.Params.ctf_name}} machine from Hack The Box
+      {{- end }}
+
+      {{- $isHidden := (.Param "cover.hiddenInSingle") | default (.Param "cover.hidden") | default false }}
+      {{- partial "cover.html" (dict "cxt" . "IsSingle" true "isHidden" $isHidden) }}
+      {{- if (.Param "ShowToc") }}
+      {{- partial "toc.html" . }}
+      {{- end }}
+
+      {{- if .Content }}
+      <div class="post-content">
+        {{- if not (.Param "disableAnchoredHeadings") }}
+        {{- partial "anchored_headings.html" .Content -}}
+        {{- else }}{{ .Content }}{{ end }}
       </div>
-      <div class="card-footer">
-        Hack The Box
-      </div>
-    </article>
+      {{- end }}
+    </div>
   </div>
-  {{- end }}
-  
-  
-  {{- $isHidden := (.Param "cover.hiddenInSingle") | default (.Param "cover.hidden") | default false }}
-  {{- partial "cover.html" (dict "cxt" . "IsSingle" true "isHidden" $isHidden) }}
-  {{- if (.Param "ShowToc") }}
-  {{- partial "toc.html" . }}
-  {{- end }}
-  
-  {{- if .Content }}
-  <div class="post-content">
-    {{- if not (.Param "disableAnchoredHeadings") }}
-    {{- partial "anchored_headings.html" .Content -}}
-    {{- else }}{{ .Content }}{{ end }}
-  </div>
-  {{- end }}
 
   <footer class="post-footer">
     {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
