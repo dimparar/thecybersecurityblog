@@ -3,16 +3,21 @@ title = 'VulnHub: Kioptrix Lv1'
 date = 2026-08-14T13:05:02+03:00
 draft = false
 showpage = true
+tableOfContents = true
 +++
 
 ----
+## Description
+
 VulnHub: [Kioptrix: Level 1](https://www.vulnhub.com/entry/kioptrix-level-1-1,22/)
 
-----
-### Description
 The object of the game is to acquire root access via any means possible
 
 ----
+
+## Writeup
+
+### Reconnaissance
 
 ```bash
 sudo netdiscovery -i eth0
@@ -106,7 +111,7 @@ The enum4linux found a sid and started to enumerate users with rid cycling
 But there might be users at higher RID.
 ```
 
-# RID Cycling
+### RID Cycling
 
 #### Background
 
@@ -176,6 +181,8 @@ $ set RPORT 139
 ```
 
 Samba v.2.2.1a
+
+### Exploit
 
 Found a metasploit module that may be able to exploit a buffer overflow for this version of samba
 

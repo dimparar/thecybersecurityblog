@@ -34,12 +34,12 @@
         transition: .15s ease-in , border-color cubic-bezier(0.165, 0.84, 0.44, 1);
         
         &:hover, &:focus-within {
-            box-shadow: 0 0 0 4px #16C79A, 0 10px 60px 0 rgba(#000, .1);
+            box-shadow: 0 0 0 4px var(--accent), 0 10px 60px 0 rgba(#000, .1);
                 transform: translatey(-5px);
         }
         
         &:hover {
-            border-color: #16C79A;
+            border-color: var(--accent);
         }
         
     }
@@ -173,13 +173,13 @@
     .post-content h1 {
         margin: 40px auto 32px;
         font-size: 26px;
-        color: #77B0AA;
+        color: var(--accent);
     }
 
     .post-content h2 {
         margin: 32px auto 24px;
         font-size: 26px;
-        color: #77B0AA;
+        color: var(--accent);
     }
 
     .post-content h3 {
@@ -537,6 +537,105 @@
     }
 
 
+}
+
+/* =========================================================
+   hacker-minimal table of contents (sticky left rail)
+   ========================================================= */
+.toc-terminal {
+    --toc-accent: var(--accent);
+    position: relative;
+    max-width: 46em;
+    margin: 24px auto var(--content-gap) auto;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    line-height: 1.8;
+    border-inline-start: 2px solid var(--toc-accent);
+    padding: .2em 0 .2em 1.2em;
+}
+
+.toc-terminal .toc-terminal-heading {
+    font-size: 11px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--toc-accent);
+    margin-bottom: .8em;
+    opacity: .85;
+}
+
+.toc-terminal .toc-terminal-heading::before {
+    content: "#";
+    margin-right: .7em;
+    opacity: .5;
+}
+
+.toc-terminal #TableOfContents {
+    margin: 0;
+    padding: 0;
+}
+
+.toc-terminal #TableOfContents ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.toc-terminal #TableOfContents ul ul {
+    padding-left: 1.6em;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height .3s ease, opacity .3s ease, padding .3s ease;
+}
+
+.toc-terminal #TableOfContents li.is-active > ul {
+    max-height: 24em;
+    opacity: 1;
+    padding-top: .1em;
+    padding-bottom: .1em;
+}
+
+.toc-terminal #TableOfContents li {
+    padding: .12em 0;
+    border-inline-start: 2px solid transparent;
+}
+
+.toc-terminal #TableOfContents li::before {
+    content: ">";
+    color: var(--toc-accent);
+    opacity: .3;
+    margin-right: .6em;
+    user-select: none;
+    transition: opacity .15s ease;
+}
+
+.toc-terminal #TableOfContents a {
+    color: var(--primary);
+    text-decoration: none;
+    box-shadow: none;
+    transition: color .15s ease;
+}
+
+.toc-terminal #TableOfContents a:hover {
+    color: var(--toc-accent);
+}
+
+.toc-terminal #TableOfContents li:hover::before {
+    opacity: 1;
+}
+
+/* current section highlight */
+.toc-terminal #TableOfContents li.is-active {
+    border-inline-start-color: var(--toc-accent);
+    background: rgba(35, 224, 164, 0.06);
+}
+
+.toc-terminal #TableOfContents li.is-active::before {
+    opacity: 1;
+}
+
+.toc-terminal #TableOfContents li.is-active > a {
+    color: var(--toc-accent);
 }
 
 @media only screen and (min-width: 1200px) {
@@ -974,5 +1073,37 @@
     img.in-text {
         display: inline;
         margin: auto;
+    }
+}
+
+/* =========================================================
+   sticky TOC rail - wide screens only, content stays centered
+   ========================================================= */
+@media only screen and (min-width: 1200px) {
+    .post-body.with-toc {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+        column-gap: 32px;
+        align-items: start;
+    }
+
+    .post-body.with-toc .toc-terminal {
+        grid-column: 1;
+        position: sticky;
+        top: 30px;
+        align-self: start;
+        justify-self: end;
+        width: 100%;
+        max-width: 320px;
+        max-height: calc(100vh - 60px);
+        overflow-y: auto;
+        overflow-x: hidden;
+        margin: 0;
+    }
+
+    .post-body.with-toc .post-main {
+        grid-column: 2;
+        min-width: 0;
+        width: 100%;
     }
 }

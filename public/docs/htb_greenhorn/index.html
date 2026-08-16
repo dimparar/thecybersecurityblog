@@ -12,7 +12,7 @@ PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8.9p1 Ubuntu 3ubuntu0.10 (Ubu
 As we can see, there is an http service running at port 80 and an undefined service running at port 3000.">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/thecybersecurityblog/docs/htb_greenhorn/">
-<link crossorigin="anonymous" href="/thecybersecurityblog/assets/css/stylesheet.e1d5379b61d412d35dcaf2371eec6bea8c023e307a0719dcab030767036d17f6.css" integrity="sha256-4dU3m2HUEtNdyvI3Huxr6owCPjB6BxncqwMHZwNtF/Y=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/thecybersecurityblog/assets/css/stylesheet.0643a4ac9748f29ce8d3091f50d24ce1a495a913c3b0218c829cd6c1aec7a488.css" integrity="sha256-BkOkrJdI8pzo0wkfUNJM4aSVqRPDsCGMgpzWwa7HpIg=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/thecybersecurityblog/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/thecybersecurityblog/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/thecybersecurityblog/favicon-32x32.png">
@@ -133,23 +133,27 @@ As we can see, there is an http service running at port 80 and an undefined serv
 
 </div>
   </header>
-  <div class="card-list" onclick="location.href='https:\/\/www.hackthebox.com\/achievement\/machine\/2124852\/617';" style="cursor: pointer;">
-    <article class="card">
-      <figure class="card-image">
-        <img class=card-image src="greenhorn_cert.png" alt="Cert" />
-      </figure>
-      <div class="card-header">
-        <a href="https://www.hackthebox.com/achievement/machine/2124852/617">Owned Greenhorn from Hack The Box</a>
-      </div>
-      <div class="card-content">
-        I have just gained ownership of Greenhorn machine from Hack The Box
-      </div>
-      <div class="card-footer">
-        Hack The Box
-      </div>
-    </article>
-  </div> 
-  <div class="post-content"><p>Let&rsquo;s scan with nmap.</p>
+  
+  <div class="post-body">
+
+    <div class="post-main">
+      <div class="card-list" onclick="location.href='https:\/\/www.hackthebox.com\/achievement\/machine\/2124852\/617';" style="cursor: pointer;">
+        <article class="card">
+          <figure class="card-image">
+            <img class=card-image src="greenhorn_cert.png" alt="Cert" />
+          </figure>
+          <div class="card-header">
+            <a href="https://www.hackthebox.com/achievement/machine/2124852/617">Owned Greenhorn from Hack The Box</a>
+          </div>
+          <div class="card-content">
+            I have just gained ownership of Greenhorn machine from Hack The Box
+          </div>
+          <div class="card-footer">
+            Hack The Box
+          </div>
+        </article>
+      </div> 
+      <div class="post-content"><p>Let&rsquo;s scan with nmap.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>PORT     STATE SERVICE VERSION
 </span></span><span style="display:flex;"><span>22/tcp   open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.10 <span style="color:#f92672">(</span>Ubuntu Linux; protocol 2.0<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>80/tcp   open  http    nginx 1.18.0 <span style="color:#f92672">(</span>Ubuntu<span style="color:#f92672">)</span>
@@ -232,6 +236,8 @@ By following the <code>README</code> instructions, we created the <code>payload.
 <p>Now <code>su root</code>, type the password and &hellip; we are root.</p>
 
 
+      </div>
+    </div>
   </div>
 
   <footer class="post-footer">
