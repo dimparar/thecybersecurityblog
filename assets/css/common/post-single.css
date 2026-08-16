@@ -539,6 +539,213 @@
 
 }
 
+/* =========================================================
+   terminal-style table of contents (hacker TOC)
+   ========================================================= */
+.toc-terminal {
+    --toc-green: #23e0a4;
+    --toc-dim: #1b7a5e;
+    --toc-text: #c6ffe8;
+    position: relative;
+    max-width: 46em;
+    margin: 24px auto var(--content-gap) auto;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--toc-text);
+    background:
+        linear-gradient(rgba(35, 224, 164, 0.04) 50%, transparent 50%) 0 0 / 100% 4px,
+        #08110d;
+    border: 1px solid var(--toc-dim);
+    border-radius: 6px;
+    box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.6),
+        0 0 18px rgba(35, 224, 164, 0.12),
+        inset 0 0 24px rgba(35, 224, 164, 0.05);
+    overflow: hidden;
+}
+
+.toc-terminal::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 40%;
+    top: -40%;
+    background: linear-gradient(180deg, transparent, rgba(35, 224, 164, 0.08), transparent);
+    animation: tocScan 4.5s linear infinite;
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* terminal title bar */
+.toc-terminal-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    background: #0c1410;
+    border-bottom: 1px solid var(--toc-dim);
+    position: relative;
+}
+
+
+
+.toc-terminal-light {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.toc-terminal-light.is-red { background: #e5484d; }
+.toc-terminal-light.is-yellow { background: #e8b93a; }
+.toc-terminal-light.is-green { background: #2bd775; }
+
+.toc-terminal-title {
+    flex: 1;
+    margin-left: 6px;
+    color: #5fbf96;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+}
+
+.toc-terminal-title::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    color: var(--toc-green);
+    background: #0c1410;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.toc-terminal-bar:hover .toc-terminal-title::after {
+    animation: tocGlitch .25s steps(2) 1;
+    opacity: 1;
+}
+
+/* fake command line */
+.toc-terminal-command {
+    display: flex;
+    align-items: center;
+    padding: .9em 1em 0;
+    color: #7ef2c4;
+    font-size: 13px;
+}
+
+.toc-terminal-prompt {
+    color: var(--toc-green);
+    font-weight: 700;
+    margin-right: .5em;
+    user-select: none;
+}
+
+.toc-terminal-cmd {
+    color: #9fe8c9;
+}
+
+/* list */
+.toc-terminal #TableOfContents {
+    counter-reset: toc-item;
+    padding: .4em 1em 1em;
+    position: relative;
+    z-index: 1;
+}
+
+.toc-terminal #TableOfContents ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.toc-terminal #TableOfContents ul ul {
+    padding-left: 1.4em;
+}
+
+.toc-terminal #TableOfContents li {
+    counter-increment: toc-item;
+    opacity: 0;
+    animation: tocItemIn .35s steps(4) both;
+    animation-delay: calc(var(--ti, 0) * .11s + .55s);
+}
+
+.toc-terminal #TableOfContents li::before {
+    content: "> [" counter(toc-item, decimal-leading-zero) "] ";
+    color: var(--toc-green);
+    opacity: .7;
+    user-select: none;
+}
+
+.toc-terminal #TableOfContents a {
+    color: var(--toc-text);
+    text-decoration: none;
+    box-shadow: none;
+    transition: color .15s ease;
+}
+
+.toc-terminal #TableOfContents a:hover {
+    color: var(--toc-green);
+    text-shadow: 0 0 8px rgba(35, 224, 164, 0.8);
+    animation: tocGlitch .18s steps(2) infinite;
+}
+
+/* blinking block cursor */
+.toc-terminal-cursor {
+    display: inline-block;
+    width: .55em;
+    height: 1.1em;
+    margin-left: .2em;
+    background: var(--toc-green);
+    box-shadow: 0 0 8px rgba(35, 224, 164, 0.9);
+    animation: tocBlink 1s steps(1) infinite;
+}
+
+@keyframes tocScan {
+    0% { top: -40%; }
+    100% { top: 140%; }
+}
+
+@keyframes tocBlink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}
+
+@keyframes tocItemIn {
+    from {
+        opacity: 0;
+        transform: translateX(-8px);
+        filter: blur(2px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes tocGlitch {
+    0% { transform: translate(0); }
+    25% { transform: translate(-1px, 1px); }
+    50% { transform: translate(1px, -1px); }
+    75% { transform: translate(-1px, 0); }
+    100% { transform: translate(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .toc-terminal *,
+    .toc-terminal::before {
+        animation: none !important;
+    }
+
+    .toc-terminal #TableOfContents li {
+        opacity: 1;
+    }
+}
+
 @media only screen and (min-width: 1200px) {
 
     .page-header,

@@ -3,6 +3,7 @@ title = 'VulnHub: Kioptrix Lv1'
 date = 2026-08-14T13:05:02+03:00
 draft = false
 showpage = true
+tableOfContents = true
 +++
 
 ----

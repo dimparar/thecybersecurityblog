@@ -31,8 +31,28 @@
   </header>
   
   {{- if .Params.tableOfContents}}
-  <div class="toc">
-    {{ .TableOfContents }}
+  <div class="toc-terminal" aria-label="Table of Contents">
+    <div class="toc-terminal-bar" data-text="root@thecybersecurityblog:~$ cat table-of-contents.txt">
+      <span class="toc-terminal-light is-red"></span>
+      <span class="toc-terminal-light is-yellow"></span>
+      <span class="toc-terminal-light is-green"></span>
+      <span class="toc-terminal-title">root@thecybersecurityblog:~$ cat table-of-contents.txt</span>
+    </div>
+    <div class="toc-terminal-body">
+      <div class="toc-terminal-command"><span class="toc-terminal-prompt">$</span> <span class="toc-terminal-cmd">grep -i "sections" index.md</span></div>
+      {{ .TableOfContents }}
+      <div class="toc-terminal-command"><span class="toc-terminal-prompt">$</span><span class="toc-terminal-cursor"></span></div>
+    </div>
+    <script>
+      (function () {
+        var nav = document.querySelector(".toc-terminal #TableOfContents");
+        if (!nav) return;
+        var items = nav.querySelectorAll("li");
+        Array.prototype.forEach.call(items, function (li, i) {
+          li.style.setProperty("--ti", i);
+        });
+      })();
+    </script>
   </div>
   {{- end }}
   
