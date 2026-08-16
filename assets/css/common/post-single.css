@@ -582,6 +582,17 @@
 
 .toc-terminal #TableOfContents ul ul {
     padding-left: 1.6em;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height .3s ease, opacity .3s ease, padding .3s ease;
+}
+
+.toc-terminal #TableOfContents li.is-active > ul {
+    max-height: 24em;
+    opacity: 1;
+    padding-top: .1em;
+    padding-bottom: .1em;
 }
 
 .toc-terminal #TableOfContents li {

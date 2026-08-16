@@ -51,9 +51,11 @@
 
             function setActive(id) {
               Array.prototype.forEach.call(items, function (li) {
-                var a = li.querySelector("a");
-                var active = a && a.getAttribute("href") === "#" + id;
-                li.classList.toggle("is-active", active);
+                var inside = false;
+                if (id) {
+                  inside = !!li.querySelector('a[href="#' + id + '"]');
+                }
+                li.classList.toggle("is-active", inside);
               });
             }
 
