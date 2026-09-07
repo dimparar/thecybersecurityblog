@@ -6,7 +6,7 @@ showpage = true
 ctfcard = true
 photoname = 'greenhorn_cert.png'
 ctf_name = 'Greenhorn'
-cert_path = 'https://www.hackthebox.com/achievement/machine/2124852/617'
+cert_path = 'https://labs.hackthebox.com/achievement/machine/2124852/617'
 +++
 
 Let's scan with nmap.

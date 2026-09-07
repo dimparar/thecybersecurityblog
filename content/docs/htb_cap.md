@@ -6,7 +6,7 @@ showpage = true
 ctfcard = true
 photoname = 'cap_cert.png'
 ctf_name = 'Cap'
-cert_path = 'https://www.hackthebox.com/achievement/machine/2124852/351'
+cert_path = 'https://labs.hackthebox.com/achievement/machine/2124852/351'
 +++
 
 Let ip_address=10.10.10.10.<br>

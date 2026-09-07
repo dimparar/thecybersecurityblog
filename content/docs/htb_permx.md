@@ -6,7 +6,7 @@ showpage = true
 ctfcard = true
 photoname = 'permx_cert.png'
 ctf_name = 'PermX'
-cert_path = 'https://www.hackthebox.com/achievement/machine/2124852/613'
+cert_path = 'https://labs.hackthebox.com/achievement/machine/2124852/613'
 +++
 
 Let's scan the machine with nmap.

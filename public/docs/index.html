@@ -128,13 +128,27 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">VulnHub: Kioptrix Lv2
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Description VulnHub: Kioptrix: Level 2
+The object of the game is to acquire root access via any means possible
+Reconnaissance $ sudo netdiscover -i eth0 $ sudo nmap -p- -A -T5 -v 192.168.127.130 # Output PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 3.9p1 (protocol 1.99) | ssh-hostkey: | 1024 8f:3e:8b:1e:58:63:fe:cf:27:a3:18:09:3b:52:cf:72 (RSA1) | 1024 34:6b:45:3d:ba:ce:ca:b2:53:55:ef:1e:43:70:38:36 (DSA) |_ 1024 68:4d:8c:bb:b6:5a:bd:79:71:b8:71:47:ea:00:42:61 (RSA) |_sshv1: Server supports SSHv1 80/tcp open http Apache httpd 2....</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-09-07 09:39:09 +0300 EEST'>07 Sep 2026</span></footer>
+  <a class="entry-link" aria-label="post link to VulnHub: Kioptrix Lv2" href="http://localhost:1313/thecybersecurityblog/docs/kioptrix_lv2/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">VulnHub: Kioptrix Lv1
     </h2>
   </header>
   <div class="entry-content">
     <p>Description VulnHub: Kioptrix: Level 1
 The object of the game is to acquire root access via any means possible
-Writeup Reconnaissance sudo netdiscovery -i eth0 # Host discovery only with ARP messsages sudo nmap -PR -sn 192.168.127.0/24 sudo nmap -A -T5 -v 192.168.127.129 # Output PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 2.9p2 (protocol 1.99) |_sshv1: Server supports SSHv1 | ssh-hostkey: | 1024 b8:74:6c:db:fd:8b:e6:66:e9:2a:2b:df:5e:6f:64:86 (RSA1) | 1024 8f:8e:5b:81:ed:21:ab:c1:80:e1:57:a3:3c:85:c4:71 (DSA) |_ 1024 ed:4e:a9:4a:06:14:ff:15:14:ce:da:3a:80:db:e2:81 (RSA) 80/tcp open http Apache httpd 1....</p>
+Reconnaissance sudo netdiscovery -i eth0 # Host discovery only with ARP messsages sudo nmap -PR -sn 192.168.127.0/24 sudo nmap -A -T5 -v 192.168.127.129 # Output PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 2.9p2 (protocol 1.99) |_sshv1: Server supports SSHv1 | ssh-hostkey: | 1024 b8:74:6c:db:fd:8b:e6:66:e9:2a:2b:df:5e:6f:64:86 (RSA1) | 1024 8f:8e:5b:81:ed:21:ab:c1:80:e1:57:a3:3c:85:c4:71 (DSA) |_ 1024 ed:4e:a9:4a:06:14:ff:15:14:ce:da:3a:80:db:e2:81 (RSA) 80/tcp open http Apache httpd 1....</p>
   </div>
   <footer class="entry-footer"><span title='2026-08-14 13:05:02 +0300 EEST'>14 Aug 2026</span></footer>
   <a class="entry-link" aria-label="post link to VulnHub: Kioptrix Lv1" href="http://localhost:1313/thecybersecurityblog/docs/kioptrix_lv1/"></a>
@@ -264,19 +278,6 @@ How 100% Manual Hacking (Without Even Kali And Burp) Led To 2 Medium Vulnerabili
   </div>
   <footer class="entry-footer"><span title='2024-11-09 22:00:07 +0200 EET'>09 Nov 2024</span></footer>
   <a class="entry-link" aria-label="post link to Bug Bounty Useful Resources" href="http://localhost:1313/thecybersecurityblog/docs/bug_bounty_useful_resources/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Hack The Box: PermX
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Let’s scan the machine with nmap.
-# Command sudo nmap -sS -sV -sC -v -T4 10.10.11.23 # Output PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8.9p1 Ubuntu 3ubuntu0.10 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 256 e2:5c:5d:8c:47:3e:d8:72:f7:b4:80:03:49:86:6d:ef (ECDSA) |_ 256 1f:41:02:8e:6b:17:18:9c:a0:ac:54:23:e9:71:30:17 (ED25519) 80/tcp open http Apache httpd 2.4.52 Let’s check the Http Server in browser. It seems then we try to access http://10.10.11.23:80/ we get redirected to http://permx.htb/, but the page doesn’t load....</p>
-  </div>
-  <footer class="entry-footer"><span title='2024-11-08 13:43:52 +0200 EET'>08 Nov 2024</span></footer>
-  <a class="entry-link" aria-label="post link to Hack The Box: PermX" href="http://localhost:1313/thecybersecurityblog/docs/htb_permx/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

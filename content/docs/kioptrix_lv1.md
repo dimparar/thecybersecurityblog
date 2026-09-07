@@ -15,9 +15,7 @@ The object of the game is to acquire root access via any means possible
 
 ----
 
-## Writeup
-
-### Reconnaissance
+## Reconnaissance
 
 ```bash
 sudo netdiscovery -i eth0
@@ -182,7 +180,7 @@ $ set RPORT 139
 
 Samba v.2.2.1a
 
-### Exploit
+## Exploit
 
 Found a metasploit module that may be able to exploit a buffer overflow for this version of samba
 

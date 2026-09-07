@@ -6,7 +6,7 @@ showpage = true
 ctfcard = true
 photoname = 'instant_cert.png'
 ctf_name = 'Instant'
-cert_path = 'https://www.hackthebox.com/achievement/machine/2124852/630'
+cert_path = 'https://labs.hackthebox.com/achievement/machine/2124852/630'
 +++
 
 Let's scan the machine with nmap.
