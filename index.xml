@@ -6,8 +6,17 @@
     <description>Recent content on The Cyber Security Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Aug 2026 13:05:02 +0300</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 09:39:09 +0300</lastBuildDate>
     <atom:link href="https://dimparar.github.io/thecybersecurityblog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VulnHub: Kioptrix Lv2</title>
+      <link>https://dimparar.github.io/thecybersecurityblog/docs/kioptrix_lv2/</link>
+      <pubDate>Mon, 07 Sep 2026 09:39:09 +0300</pubDate>
+      <guid>https://dimparar.github.io/thecybersecurityblog/docs/kioptrix_lv2/</guid>
+      <description>Description VulnHub: Kioptrix: Level 2
+The object of the game is to acquire root access via any means possible
+Reconnaissance $ sudo netdiscover -i eth0 $ sudo nmap -p- -A -T5 -v 192.168.127.130 # Output PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 3.9p1 (protocol 1.99) | ssh-hostkey: | 1024 8f:3e:8b:1e:58:63:fe:cf:27:a3:18:09:3b:52:cf:72 (RSA1) | 1024 34:6b:45:3d:ba:ce:ca:b2:53:55:ef:1e:43:70:38:36 (DSA) |_ 1024 68:4d:8c:bb:b6:5a:bd:79:71:b8:71:47:ea:00:42:61 (RSA) |_sshv1: Server supports SSHv1 80/tcp open http Apache httpd 2.</description>
+    </item>
     <item>
       <title>VulnHub: Kioptrix Lv1</title>
       <link>https://dimparar.github.io/thecybersecurityblog/docs/kioptrix_lv1/</link>
@@ -15,7 +24,7 @@
       <guid>https://dimparar.github.io/thecybersecurityblog/docs/kioptrix_lv1/</guid>
       <description>Description VulnHub: Kioptrix: Level 1
 The object of the game is to acquire root access via any means possible
-Writeup Reconnaissance sudo netdiscovery -i eth0 # Host discovery only with ARP messsages sudo nmap -PR -sn 192.168.127.0/24 sudo nmap -A -T5 -v 192.168.127.129 # Output PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 2.9p2 (protocol 1.99) |_sshv1: Server supports SSHv1 | ssh-hostkey: | 1024 b8:74:6c:db:fd:8b:e6:66:e9:2a:2b:df:5e:6f:64:86 (RSA1) | 1024 8f:8e:5b:81:ed:21:ab:c1:80:e1:57:a3:3c:85:c4:71 (DSA) |_ 1024 ed:4e:a9:4a:06:14:ff:15:14:ce:da:3a:80:db:e2:81 (RSA) 80/tcp open http Apache httpd 1.</description>
+Reconnaissance sudo netdiscovery -i eth0 # Host discovery only with ARP messsages sudo nmap -PR -sn 192.168.127.0/24 sudo nmap -A -T5 -v 192.168.127.129 # Output PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 2.9p2 (protocol 1.99) |_sshv1: Server supports SSHv1 | ssh-hostkey: | 1024 b8:74:6c:db:fd:8b:e6:66:e9:2a:2b:df:5e:6f:64:86 (RSA1) | 1024 8f:8e:5b:81:ed:21:ab:c1:80:e1:57:a3:3c:85:c4:71 (DSA) |_ 1024 ed:4e:a9:4a:06:14:ff:15:14:ce:da:3a:80:db:e2:81 (RSA) 80/tcp open http Apache httpd 1.</description>
     </item>
     <item>
       <title>CTF@AC 2025: Money</title>

